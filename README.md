@@ -1,32 +1,56 @@
-# React + TypeScript + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+# 🌙 NightLight
 
-Currently, two official plugins are available:
+### **Music, after dark.**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+A cinematic landing page for **NightLight** — built to make a first impression feel like an experience.
 
-## React Compiler
+<br/>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+[![Live](https://img.shields.io/badge/🌐_Live_Site-Visit_NightLight-ffffff?style=for-the-badge&labelColor=0b0b0f&color=11131a)](https://nightlight-landing-page.vercel.app/)
+[![React](https://img.shields.io/badge/React-18+-0b0b0f?style=for-the-badge&logo=react&logoColor=61DAFB&labelColor=11131a)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-0b0b0f?style=for-the-badge&logo=typescript&logoColor=3178C6&labelColor=11131a)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-0b0b0f?style=for-the-badge&logo=vite&logoColor=646CFF&labelColor=11131a)](https://vite.dev/)
 
-## Expanding the Oxlint configuration
+<br/>
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:050509,50:10121a,100:050509&height=120&section=header" width="100%"/>
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+</div>
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+---
+
+## 🌧️ An experience, not a brochure.
+
+NightLight's landing page is designed around one idea:
+
+> **The website should feel like the product before the user even opens it.**
+
+Instead of presenting a conventional product page, the interface behaves like a cinematic night environment.
+
+Rain moves through the scene.  
+Clouds drift across the horizon.  
+Lightning cuts through the atmosphere.  
+The interface reacts as you move through the page.
+
+Every section exists to build the feeling of NightLight.
+
+---
+
+<div align="center">
+
+### 🌩️ THE NIGHT IS ALIVE
+
+```text
+             ☁️        ☁️
+       ☁️                       ☁️
+
+              ╲   🌧️   ╱
+               ╲      ╱
+                ╲    ╱
+                 ⚡
+
+        ─────────────────────
+             NIGHTLIGHT
+        ─────────────────────
