@@ -23,13 +23,18 @@ export default function LyricsScene() {
     return () => clearInterval(interval)
   }, [])
 
-  // Scroll the active line into view within the container
+  // Keep the active line centered inside the lyrics container — without
+  // touching the page scroll. The container itself is overflow:hidden, so
+  // we adjust scrollTop directly on it.
   useEffect(() => {
     const container = containerRef.current
     if (!container) return
-    const activeEl = container.querySelector('.lyrics-scene__line.is-active')
+    const activeEl = container.querySelector<HTMLElement>('.lyrics-scene__line.is-active')
     if (activeEl) {
-      activeEl.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      const cRect = container.getBoundingClientRect()
+      const aRect = activeEl.getBoundingClientRect()
+      const offset = aRect.top - cRect.top - (cRect.height - aRect.height) / 2
+      container.scrollTo({ top: container.scrollTop + offset, behavior: 'smooth' })
     }
   }, [active])
 
@@ -53,9 +58,9 @@ export default function LyricsScene() {
 
         <Reveal delay={200}>
           <div
-            className="lyrics-scene__lines"
+            className="lyrics-scene__lines lyrics-scene__scroll"
             ref={containerRef}
-            style={{ maxHeight: '360px', overflow: 'hidden', maskImage: 'linear-gradient(180deg, transparent, #000 15%, #000 85%, transparent)' }}
+            style={{ maxHeight: '360px' }}
           >
             {PERFECT_LYRICS.map((line, i) => {
 
