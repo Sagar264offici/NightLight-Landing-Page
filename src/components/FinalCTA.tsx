@@ -1,6 +1,6 @@
 /**
- * FINAL CTA (§36, §50) — quiet again. Deepest black, very light rain
- * (weather state handles it), huge negative space. Emotional, not salesy.
+ * FINAL CTA (§33, §36) — quiet again. Deepest black, very light rain,
+ * huge negative space. Emotional, not salesy.
  */
 import { DownloadButton } from '../ui/DownloadButton'
 import Reveal from '../ui/Reveal'
@@ -8,7 +8,7 @@ import { Headline, Body } from '../ui/typography'
 
 export default function FinalCTA() {
   return (
-    <section className="finale" data-section="finale">
+    <section className="finale" id="download" data-section="finale">
       <Reveal className="finale__inner">
         <Headline as="h2" size="xl" className="finale__title">
           Your night.
