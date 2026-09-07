@@ -43,9 +43,9 @@ export const SOCIAL_LINKS: ReadonlyArray<{ label: string; href: string }> = [
 /* ------------------------------------------------------------------ */
 
 export const NAV_LINKS = [
-  { label: 'Product', href: '#product' },
   { label: 'Experience', href: '#experience' },
   { label: 'Features', href: '#features' },
+  { label: 'Download', href: '#download' },
 ] as const
 
 /* ------------------------------------------------------------------ */
@@ -185,7 +185,29 @@ export const TRACKS: readonly Track[] = [
   },
 ]
 
-/** Sample time-synced lyric lines (placeholder content, §64). */
+/** Sample time-synced lyric lines for the Perfect demo. */
+export const PERFECT_LYRICS: readonly string[] = [
+  'I found a love for me',
+  'Darling, just dive right in',
+  'And follow my lead',
+  'Well, I found a girl, beautiful and sweet',
+  'Oh, I never knew you were the someone',
+  'Waiting for me',
+  'Cause we were just kids when we fell in love',
+  'Not knowing what it was',
+  'I will not give you up this time',
+  'But darling, just kiss me slow, your heart is all I own',
+  'And in your eyes you\'re holding mine',
+  'Baby, I\'m dancing in the dark',
+  'With you between my arms',
+  'Barefoot on the grass',
+  'Listening to our favourite song',
+  'When you said you looked a mess',
+  'I whispered underneath my breath',
+  'But you heard it, darling, you look perfect tonight',
+]
+
+/** Original sample lyrics (placeholder). */
 export const SAMPLE_LYRICS: readonly string[] = [
   'streetlights on the ceiling again',
   'the city hums in a lower key',
@@ -212,6 +234,54 @@ export const SMART_WORDS: readonly string[] = [
   'rediscovered',
   'slow tempo',
   'after hours',
+]
+
+/* ------------------------------------------------------------------ */
+/* SEARCH DEMO DATA (§12)                                              */
+/* ------------------------------------------------------------------ */
+
+export interface SearchResult {
+  title: string
+  artist: string
+  variant?: string
+  canonical: boolean
+}
+
+export const SEARCH_DEMO: readonly { query: string; results: readonly SearchResult[] }[] = [
+  {
+    query: 'Ed Sheeran Perfect',
+    results: [
+      { title: 'Perfect', artist: 'Ed Sheeran', canonical: true },
+      { title: 'Perfect Acoustic', artist: 'Ed Sheeran', variant: 'acoustic', canonical: false },
+      { title: 'Perfect Live', artist: 'Ed Sheeran', variant: 'live', canonical: false },
+      { title: 'Perfect Remix', artist: 'Ed Sheeran', variant: 'remix', canonical: false },
+    ],
+  },
+  {
+    query: 'Ed Sheeran Perfect acoustic',
+    results: [
+      { title: 'Perfect Acoustic', artist: 'Ed Sheeran', variant: 'acoustic', canonical: true },
+      { title: 'Perfect', artist: 'Ed Sheeran', canonical: false },
+      { title: 'Perfect Live', artist: 'Ed Sheeran', variant: 'live', canonical: false },
+      { title: 'Perfect Remix', artist: 'Ed Sheeran', variant: 'remix', canonical: false },
+    ],
+  },
+]
+
+/* ------------------------------------------------------------------ */
+/* LANGUAGE DEMO DATA (§21)                                            */
+/* ------------------------------------------------------------------ */
+
+export const LANG_EN: readonly { title: string; artist: string }[] = [
+  { title: 'Perfect', artist: 'Ed Sheeran' },
+  { title: 'Attention', artist: 'Charlie Puth' },
+  { title: 'Levitating', artist: 'Dua Lipa' },
+]
+
+export const LANG_HI: readonly { title: string; artist: string }[] = [
+  { title: 'Paaro', artist: 'Aditya Rikhari' },
+  { title: 'Pal Pal', artist: 'Talwinder' },
+  { title: 'Chal Bombay', artist: 'Divine' },
 ]
 
 /* ------------------------------------------------------------------ */

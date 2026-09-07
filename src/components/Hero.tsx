@@ -12,20 +12,18 @@ export default function Hero() {
     <section className="hero" id="top" data-section="hero">
       <div className="hero__inner">
         <div className="hero__copy">
-          <Eyebrow>NightLight · for Android</Eyebrow>
+          <Eyebrow>Music After Dark.</Eyebrow>
           <Headline as="h1" size="xl">
-            Music
+            Listen
             <br />
-            after dark.
+            different.
           </Headline>
           <Body className="hero__sub">
-            NightLight turns listening into an atmosphere. A music player shaped
-            by quiet hours — soft light, slower pace, sound that fills the room
-            instead of interrupting it.
+            Your music player for the hours that feel different.
           </Body>
           <div className="hero__ctas">
             <DownloadButton>Download NightLight</DownloadButton>
-            <SecondaryButton href="#product">See how it feels</SecondaryButton>
+            <SecondaryButton href="#experience">Explore the experience</SecondaryButton>
           </div>
           <Micro className="hero__micro">Free · Built for Android</Micro>
         </div>
