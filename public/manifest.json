@@ -1,0 +1,17 @@
+{
+  "name": "NightLight",
+  "short_name": "NightLight",
+  "description": "A cinematic, dark-themed music player with smart genre-aware shuffle and mood-aware playback",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#050509",
+  "theme_color": "#11131a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}

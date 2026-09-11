@@ -1,5 +1,3 @@
-<div align="center">
-
 # 🌙 NightLight
 
 ### Music after dark.
