@@ -1,56 +1,130 @@
-<div align="center">
+# NightLight
 
-# 🌙 NightLight
+### Feel the music. Find your moment.
 
-### **Music, after dark.**
+NightLight is a music listening experience built for people who want to discover songs, explore artists, and enjoy music through a clean, modern interface.
 
-A cinematic landing page for **NightLight** — built to make a first impression feel like an experience.
+Whether you're looking for something familiar or searching for your next favorite track, NightLight keeps the experience simple: **find your music, press play, and enjoy the moment.**
 
-<br/>
-
-[![Live](https://img.shields.io/badge/🌐_Live_Site-Visit_NightLight-ffffff?style=for-the-badge&labelColor=0b0b0f&color=11131a)](https://nightlight-landing-page.vercel.app/)
-[![React](https://img.shields.io/badge/React-18+-0b0b0f?style=for-the-badge&logo=react&logoColor=61DAFB&labelColor=11131a)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-0b0b0f?style=for-the-badge&logo=typescript&logoColor=3178C6&labelColor=11131a)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-0b0b0f?style=for-the-badge&logo=vite&logoColor=646CFF&labelColor=11131a)](https://vite.dev/)
-
-<br/>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:050509,50:10121a,100:050509&height=120&section=header" width="100%"/>
-
-</div>
+[**Download NightLight**](#download) · [**Explore the Features**](#features)
 
 ---
 
-## 🌧️ An experience, not a brochure.
+## A better way to listen
 
-NightLight's landing page is designed around one idea:
+Music should feel effortless. NightLight is designed to keep the focus where it belongs—the music.
 
-> **The website should feel like the product before the user even opens it.**
+<AsyncImageGroup query={["minimal dark music player app interface glowing album artwork","modern music discovery app dark interface playlist","minimalist music player now playing screen dark theme"]} layout="bento" aspectRatio="5:4" />
 
-Instead of presenting a conventional product page, the interface behaves like a cinematic night environment.
+## Features
 
-Rain moves through the scene.  
-Clouds drift across the horizon.  
-Lightning cuts through the atmosphere.  
-The interface reacts as you move through the page.
+<grid columns={2} gap={3}>
+  <grid-item>
+    <box gap={2}>
+      <AsyncImage query="minimal music discovery interface dark mode album covers" aspectRatio="4:3" width="100%"/>
+      **Discover music**
 
-Every section exists to build the feeling of NightLight.
+```
+  Find songs, artists, and albums that match your mood.
+</box>
+```
+
+  </grid-item>
+  <grid-item>
+    <box gap={2}>
+      <AsyncImage query="minimal dark now playing music player interface" aspectRatio="4:3" width="100%"/>
+      **A clean listening experience**
+
+```
+  Enjoy a focused interface designed around your music.
+</box>
+```
+
+  </grid-item>
+  <grid-item>
+    <box gap={2}>
+      <AsyncImage query="modern music search interface dark app" aspectRatio="4:3" width="100%"/>
+      **Search with ease**
+
+```
+  Find the music you're looking for without unnecessary complexity.
+</box>
+```
+
+  </grid-item>
+  <grid-item>
+    <box gap={2}>
+      <AsyncImage query="dark ambient music app interface elegant typography" aspectRatio="4:3" width="100%"/>
+      **Made for your moments**
+
+```
+  A calm, modern experience for late nights, quiet mornings, and everything in between.
+</box>
+```
+
+  </grid-item>
+</grid>
 
 ---
 
-<div align="center">
+## Why NightLight?
 
-### 🌩️ THE NIGHT IS ALIVE
+Most music apps try to do everything. NightLight focuses on making the core listening experience feel **simple, polished, and enjoyable**.
 
-```text
-             ☁️        ☁️
-       ☁️                       ☁️
+* **Less clutter.** A focused interface that keeps attention on the music.
+* **Easy discovery.** Search and explore music without friction.
+* **Modern design.** A dark, atmospheric visual experience.
+* **Built for listening.** The essentials, without unnecessary complexity.
 
-              ╲   🌧️   ╱
-               ╲      ╱
-                ╲    ╱
-                 ⚡
+> **Good music doesn't need more noise.**
 
-        ─────────────────────
-             NIGHTLIGHT
-        ─────────────────────
+---
+
+## Download NightLight
+
+Ready to listen?
+
+<box gap={3}>
+  <row align=center gap={3}>
+    <box background="surface-secondary" radius=lg size="48px" align=center justify=center>
+      <icon name=download size=xl/>
+    </box>
+    <box flex=1 gap=0>
+      **Get NightLight**
+
+```
+  <caption>Download the latest available version and start listening.</caption>
+</box>
+```
+
+  </row>
+  <row wrap=wrap gap={2}>
+    <button color=primary>Download for macOS</button>
+    <button color=secondary variant=outline>View Releases</button>
+  </row>
+  <caption>Availability and supported platforms may vary by release.</caption>
+</box>
+
+---
+
+## Built with care
+
+NightLight is an independent music app focused on creating a better everyday listening experience.
+
+**Music discovery · Clean design · Simple listening**
+
+---
+
+## Support
+
+Found an issue or have a suggestion?
+
+[Open an issue](#) · [Contact us](#)
+
+---
+
+### NightLight
+
+**Feel the music. Find your moment.**
+
+© 2026 NightLight. All rights reserved.
