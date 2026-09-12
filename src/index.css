@@ -1709,6 +1709,72 @@ ul {
   color: var(--c-muted);
 }
 
+/* --------------------------- SEO CONTENT --------------------------------- */
+.seo-content {
+  position: relative;
+  padding: var(--section-y) var(--pad-x);
+  background: linear-gradient(180deg, transparent 0%, rgba(8, 11, 16, 0.3) 100%);
+}
+
+.seo-content__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(48px, 8vh, 80px);
+}
+
+.seo-content__section {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.seo-content__section .headline {
+  margin-bottom: 16px;
+  justify-self: center;
+}
+
+.seo-content__section .body {
+  margin: 0 auto;
+}
+
+.seo-content__features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(20px, 3vw, 32px);
+  margin-top: clamp(24px, 4vh, 40px);
+  text-align: left;
+  list-style: none;
+  padding: 0;
+}
+
+.seo-content__features li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid var(--c-line-soft);
+  background: rgba(8, 11, 16, 0.5);
+  transition: border-color var(--t-ui) var(--e-out), background var(--t-ui) var(--e-out);
+}
+
+.seo-content__features li:hover {
+  border-color: rgba(216, 181, 106, 0.3);
+  background: rgba(13, 20, 34, 0.7);
+}
+
+.seo-content__features .headline--md {
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  color: var(--c-text);
+}
+
+.seo-content__features .body {
+  max-width: none;
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
+}
+
 /* ------------------------------------------------------------------ */
 /* MUSIC GALLERY — big circulating cards                                */
 /* ------------------------------------------------------------------ */

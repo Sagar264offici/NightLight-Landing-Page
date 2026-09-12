@@ -26,10 +26,10 @@ export const DIRECT_APK_URL = ''
 /* SITE / SOCIAL                                                       */
 /* ------------------------------------------------------------------ */
 
-/** Absolute site origin, e.g. 'https://nightlight.app' — enables canonical + og:url. */
-export const SITE_URL = ''
-/** Absolute URL to a 1200×630 social preview image, when one exists. */
-export const SOCIAL_PREVIEW_IMAGE = ''
+/** Absolute site origin — enables canonical + og:url. */
+export const SITE_URL = 'https://nightlightmusic.vercel.app'
+/** Absolute URL to a 1200×630 social preview image. */
+export const SOCIAL_PREVIEW_IMAGE = 'https://nightlightmusic.vercel.app/og-image.png'
 
 /** Legal + social links. Only rendered when configured — never faked. */
 export const PRIVACY_URL = ''

@@ -5,25 +5,68 @@
      crossorigin="anonymous"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>NightLight — Music After Dark</title>
-    <meta name="description" content="NightLight is a music player built for the feeling of listening at night." />
+    <title>NightLight — Free Music Player for the Web</title>
+    <meta name="description" content="NightLight is a free, modern web music player built for simple, fast and focused music listening directly in your browser." />
     <meta name="theme-color" content="#05070A" />
     <meta name="color-scheme" content="dark" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://nightlightmusic.vercel.app/" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Social metadata. og:url / canonical are added when SITE_URL is configured
-         in src/config/site.ts; og:image follows SOCIAL_PREVIEW_IMAGE. -->
-    <meta property="og:title" content="NightLight — Music After Dark" />
-    <meta property="og:description" content="NightLight is a music player built for the feeling of listening at night." />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:title" content="NightLight — Free Music Player for the Web" />
+    <meta property="og:description" content="NightLight is a free, modern web music player built for simple, fast and focused music listening directly in your browser." />
+    <meta property="og:url" content="https://nightlightmusic.vercel.app/" />
+    <meta property="og:site_name" content="NightLight" />
+    <meta property="og:image" content="https://nightlightmusic.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="NightLight web music player interface" />
+
+    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="NightLight — Music After Dark" />
-    <meta name="twitter:description" content="NightLight is a music player built for the feeling of listening at night." />
+    <meta name="twitter:title" content="NightLight — Free Music Player for the Web" />
+    <meta name="twitter:description" content="NightLight is a free, modern web music player built for simple, fast and focused music listening directly in your browser." />
+    <meta name="twitter:image" content="https://nightlightmusic.vercel.app/og-image.png" />
+    <meta name="twitter:image:alt" content="NightLight web music player interface" />
+
+    <!-- Structured Data: SoftwareApplication + WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "NightLight",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Web",
+      "url": "https://nightlightmusic.vercel.app/",
+      "description": "NightLight is a free, modern web music player designed for simple and focused music listening.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "NightLight",
+      "url": "https://nightlightmusic.vercel.app/"
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

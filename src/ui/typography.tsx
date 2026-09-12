@@ -14,13 +14,15 @@ export function Headline({
   size = 'md',
   children,
   className = '',
+  id,
 }: {
   as?: ElementType
   size?: 'xl' | 'lg' | 'md'
   children: ReactNode
   className?: string
+  id?: string
 }) {
-  return <Tag className={`headline headline--${size} ${className}`}>{children}</Tag>
+  return <Tag id={id} className={`headline headline--${size} ${className}`}>{children}</Tag>
 }
 
 export function Body({ children, className = '' }: { children: ReactNode; className?: string }) {

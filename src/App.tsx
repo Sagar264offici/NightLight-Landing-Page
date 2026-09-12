@@ -14,7 +14,6 @@ import FeatureStory from './components/FeatureStory'
 import SmartExperience from './components/SmartExperience'
 import TilePlay from './components/TilePlay'
 import FinalCTA from './components/FinalCTA'
-import Footer from './components/Footer'
 import AtmosphereModes from './components/AtmosphereModes'
 import ShuffleModes from './components/ShuffleModes'
 import SearchDemo from './components/SearchDemo'
@@ -22,6 +21,8 @@ import LyricsScene from './components/LyricsScene'
 import ShareMusic from './components/ShareMusic'
 import PlaylistImport from './components/PlaylistImport'
 import LanguageDemo from './components/LanguageDemo'
+import SeoContent from './components/SeoContent'
+import Footer from './components/Footer'
 import { initCoverArt } from './config/site'
 
 export default function App() {
@@ -36,6 +37,9 @@ export default function App() {
       <main>
         {/* §06 — Hero: atmosphere + device */}
         <Hero />
+
+        {/* SEO Content: crawlable product explanation */}
+        <SeoContent />
 
         {/* §09 — Product Reveal: phone emerges, album art, player controls */}
         <PlayerExperience />
