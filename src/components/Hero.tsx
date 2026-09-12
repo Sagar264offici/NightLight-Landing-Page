@@ -12,20 +12,20 @@ export default function Hero() {
     <section className="hero" id="top" data-section="hero">
       <div className="hero__inner">
         <div className="hero__copy">
-          <Eyebrow>Music After Dark.</Eyebrow>
+          <Eyebrow>Free Music Player for the Web</Eyebrow>
           <Headline as="h1" size="xl">
-            Listen
+            NightLight
             <br />
-            different.
+            — Free Music Player for the Web
           </Headline>
           <Body className="hero__sub">
-            Your music player for the hours that feel different.
+            NightLight is a free, modern web music player built for simple, fast and focused music listening directly in your browser.
           </Body>
           <div className="hero__ctas">
             <DownloadButton>Download NightLight</DownloadButton>
             <SecondaryButton href="#experience">Explore the experience</SecondaryButton>
           </div>
-          <Micro className="hero__micro">Free · Built for Android</Micro>
+          <Micro className="hero__micro">Free · Works in your browser</Micro>
         </div>
 
         <div className="hero__device">
