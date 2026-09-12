@@ -5,6 +5,7 @@
  * Shuffle → Lyrics → Playlists/Import → Share/Listen → Chat → Final CTA
  */
 import { useEffect } from 'react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import Atmosphere from './components/Atmosphere'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
@@ -81,6 +82,7 @@ export default function App() {
         <FinalCTA />
       </main>
       <Footer />
+      <SpeedInsights />
     </>
   )
 }
