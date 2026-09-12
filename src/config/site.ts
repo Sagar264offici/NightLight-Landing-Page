@@ -32,8 +32,8 @@ export const SITE_URL = 'https://nightlightmusic.vercel.app'
 export const SOCIAL_PREVIEW_IMAGE = 'https://nightlightmusic.vercel.app/og-image.png'
 
 /** Legal + social links. Only rendered when configured — never faked. */
-export const PRIVACY_URL = ''
-export const TERMS_URL = ''
+export const PRIVACY_URL = '/privacy'
+export const TERMS_URL = '/terms'
 export const SOCIAL_LINKS: ReadonlyArray<{ label: string; href: string }> = [
   // { label: 'X', href: 'https://x.com/nightlight' },
 ]
@@ -43,9 +43,11 @@ export const SOCIAL_LINKS: ReadonlyArray<{ label: string; href: string }> = [
 /* ------------------------------------------------------------------ */
 
 export const NAV_LINKS = [
-  { label: 'Experience', href: '#experience' },
-  { label: 'Features', href: '#features' },
-  { label: 'Download', href: '#download' },
+  { label: 'Features', href: '/features' },
+  { label: 'How It Works', href: '/how-it-works' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Help', href: '/help' },
+  { label: 'About', href: '/about' },
 ] as const
 
 /* ------------------------------------------------------------------ */

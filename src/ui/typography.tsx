@@ -5,8 +5,8 @@
  */
 import type { ElementType, ReactNode } from 'react'
 
-export function Eyebrow({ children }: { children: ReactNode }) {
-  return <p className="eyebrow">{children}</p>
+export function Eyebrow({ children, className = '', style }: { children: ReactNode; className?: string; style?: React.CSSProperties }) {
+  return <p className={`eyebrow ${className}`} style={style}>{children}</p>
 }
 
 export function Headline({
@@ -15,20 +15,22 @@ export function Headline({
   children,
   className = '',
   id,
+  style,
 }: {
   as?: ElementType
   size?: 'xl' | 'lg' | 'md'
   children: ReactNode
   className?: string
   id?: string
+  style?: React.CSSProperties
 }) {
-  return <Tag id={id} className={`headline headline--${size} ${className}`}>{children}</Tag>
+  return <Tag id={id} className={`headline headline--${size} ${className}`} style={style}>{children}</Tag>
 }
 
-export function Body({ children, className = '' }: { children: ReactNode; className?: string }) {
-  return <p className={`body ${className}`}>{children}</p>
+export function Body({ children, className = '', style }: { children: ReactNode; className?: string; style?: React.CSSProperties }) {
+  return <p className={`body ${className}`} style={style}>{children}</p>
 }
 
-export function Micro({ children, className = '' }: { children: ReactNode; className?: string }) {
-  return <p className={`micro ${className}`}>{children}</p>
+export function Micro({ children, className = '', style }: { children: ReactNode; className?: string; style?: React.CSSProperties }) {
+  return <p className={`micro ${className}`} style={style}>{children}</p>
 }
