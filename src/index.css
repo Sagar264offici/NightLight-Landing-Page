@@ -798,6 +798,7 @@ ul {
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  --cover-fill: 1; /* perf §22: box reserved, img fills, CLS stays 0 */
   transition:
     transform 320ms var(--e-out),
     opacity 320ms var(--e-out),

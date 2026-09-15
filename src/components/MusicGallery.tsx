@@ -5,18 +5,13 @@
  * artist. Tapping a card loads it into the phone player below.
  * Reduced motion: the row becomes a normal scrollable strip (§26).
  */
-import type { CSSProperties } from 'react'
 import { player } from '../engine/playerStore'
 import { TRACKS_MUTABLE } from '../config/site'
 import { Eyebrow, Headline, Body } from '../ui/typography'
 import type { Track } from '../config/site'
+import CoverImage from './CoverImage'
 
 function GalleryCard({ track, index }: { track: Track; index: number }) {
-  const style = {
-    background: track.gradient,
-    ...(track.coverUrl ? { backgroundImage: `url(${track.coverUrl})` } : {}),
-  } as CSSProperties
-
   return (
     <button
       type="button"
@@ -24,7 +19,11 @@ function GalleryCard({ track, index }: { track: Track; index: number }) {
       aria-label={`Play ${track.title} by ${track.artist}`}
       onClick={() => player.play(index % TRACKS_MUTABLE.length)}
     >
-      <span className="gal__art" aria-hidden="true" style={style} />
+      <span className="gal__art" aria-hidden="true">
+        {track.coverUrl ? (
+          <CoverImage src={track.coverUrl} alt="" width={300} className="cover-fill" />
+        ) : null}
+      </span>
       <span className="gal__meta">
         <span className="gal__t">{track.title}</span>
         <span className="gal__a">{track.artist}</span>

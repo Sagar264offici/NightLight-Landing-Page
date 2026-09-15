@@ -1,0 +1,344 @@
+{
+  "totalPngKb": 5731,
+  "totalWebpKb": 535,
+  "totalAvifKb": 354,
+  "perTierWebpKb": 178,
+  "perTierAvifKb": 118,
+  "widths": [
+    160,
+    320,
+    640
+  ],
+  "files": [
+    {
+      "file": "perfect-ed-sheeran-640w.webp",
+      "kind": "webp-640w",
+      "kb": 91
+    },
+    {
+      "file": "pal-pal-talwinder-640w.webp",
+      "kind": "webp-640w",
+      "kb": 77
+    },
+    {
+      "file": "perfect-ed-sheeran-640w.avif",
+      "kind": "avif-640w",
+      "kb": 58
+    },
+    {
+      "file": "levitating-dua-lipa-640w.webp",
+      "kind": "webp-640w",
+      "kb": 52
+    },
+    {
+      "file": "pal-pal-talwinder-640w.avif",
+      "kind": "avif-640w",
+      "kb": 43
+    },
+    {
+      "file": "levitating-dua-lipa-640w.avif",
+      "kind": "avif-640w",
+      "kb": 32
+    },
+    {
+      "file": "closer-the-chainsmokers-640w.webp",
+      "kind": "webp-640w",
+      "kb": 30
+    },
+    {
+      "file": "lonely-akon-640w.webp",
+      "kind": "webp-640w",
+      "kb": 29
+    },
+    {
+      "file": "timeless-the-weeknd-640w.webp",
+      "kind": "webp-640w",
+      "kb": 26
+    },
+    {
+      "file": "pal-pal-talwinder-320w.webp",
+      "kind": "webp-320w",
+      "kb": 25
+    },
+    {
+      "file": "lonely-akon-640w.avif",
+      "kind": "avif-640w",
+      "kb": 23
+    },
+    {
+      "file": "perfect-ed-sheeran-320w.webp",
+      "kind": "webp-320w",
+      "kb": 21
+    },
+    {
+      "file": "closer-the-chainsmokers-640w.avif",
+      "kind": "avif-640w",
+      "kb": 19
+    },
+    {
+      "file": "timeless-the-weeknd-640w.avif",
+      "kind": "avif-640w",
+      "kb": 19
+    },
+    {
+      "file": "closer-the-chainsmokers-320w.webp",
+      "kind": "webp-320w",
+      "kb": 18
+    },
+    {
+      "file": "levitating-dua-lipa-320w.webp",
+      "kind": "webp-320w",
+      "kb": 16
+    },
+    {
+      "file": "pal-pal-talwinder-320w.avif",
+      "kind": "avif-320w",
+      "kb": 16
+    },
+    {
+      "file": "attention-charlie-puth-640w.webp",
+      "kind": "webp-640w",
+      "kb": 14
+    },
+    {
+      "file": "perfect-ed-sheeran-320w.avif",
+      "kind": "avif-320w",
+      "kb": 14
+    },
+    {
+      "file": "paaro-aditya-rikhari-640w.webp",
+      "kind": "webp-640w",
+      "kb": 12
+    },
+    {
+      "file": "piano-man-billy-joel-640w.webp",
+      "kind": "webp-640w",
+      "kb": 12
+    },
+    {
+      "file": "timeless-the-weeknd-320w.webp",
+      "kind": "webp-320w",
+      "kb": 12
+    },
+    {
+      "file": "chal-bombay-divine-640w.webp",
+      "kind": "webp-640w",
+      "kb": 11
+    },
+    {
+      "file": "closer-the-chainsmokers-320w.avif",
+      "kind": "avif-320w",
+      "kb": 11
+    },
+    {
+      "file": "lonely-akon-320w.webp",
+      "kind": "webp-320w",
+      "kb": 11
+    },
+    {
+      "file": "attention-charlie-puth-640w.avif",
+      "kind": "avif-640w",
+      "kb": 10
+    },
+    {
+      "file": "levitating-dua-lipa-320w.avif",
+      "kind": "avif-320w",
+      "kb": 10
+    },
+    {
+      "file": "paaro-aditya-rikhari-640w.avif",
+      "kind": "avif-640w",
+      "kb": 9
+    },
+    {
+      "file": "piano-man-billy-joel-640w.avif",
+      "kind": "avif-640w",
+      "kb": 9
+    },
+    {
+      "file": "chal-bombay-divine-640w.avif",
+      "kind": "avif-640w",
+      "kb": 8
+    },
+    {
+      "file": "lonely-akon-320w.avif",
+      "kind": "avif-320w",
+      "kb": 8
+    },
+    {
+      "file": "pal-pal-talwinder-160w.webp",
+      "kind": "webp-160w",
+      "kb": 8
+    },
+    {
+      "file": "timeless-the-weeknd-320w.avif",
+      "kind": "avif-320w",
+      "kb": 8
+    },
+    {
+      "file": "attention-charlie-puth-320w.webp",
+      "kind": "webp-320w",
+      "kb": 7
+    },
+    {
+      "file": "chal-bombay-divine-320w.webp",
+      "kind": "webp-320w",
+      "kb": 6
+    },
+    {
+      "file": "closer-the-chainsmokers-160w.webp",
+      "kind": "webp-160w",
+      "kb": 6
+    },
+    {
+      "file": "levitating-dua-lipa-160w.webp",
+      "kind": "webp-160w",
+      "kb": 6
+    },
+    {
+      "file": "perfect-ed-sheeran-160w.webp",
+      "kind": "webp-160w",
+      "kb": 6
+    },
+    {
+      "file": "we-didnt-start-the-fire-billy-joel-640w.webp",
+      "kind": "webp-640w",
+      "kb": 6
+    },
+    {
+      "file": "attention-charlie-puth-320w.avif",
+      "kind": "avif-320w",
+      "kb": 5
+    },
+    {
+      "file": "chal-bombay-divine-320w.avif",
+      "kind": "avif-320w",
+      "kb": 5
+    },
+    {
+      "file": "paaro-aditya-rikhari-320w.webp",
+      "kind": "webp-320w",
+      "kb": 5
+    },
+    {
+      "file": "pal-pal-talwinder-160w.avif",
+      "kind": "avif-160w",
+      "kb": 5
+    },
+    {
+      "file": "piano-man-billy-joel-320w.webp",
+      "kind": "webp-320w",
+      "kb": 5
+    },
+    {
+      "file": "we-didnt-start-the-fire-billy-joel-640w.avif",
+      "kind": "avif-640w",
+      "kb": 5
+    },
+    {
+      "file": "closer-the-chainsmokers-160w.avif",
+      "kind": "avif-160w",
+      "kb": 4
+    },
+    {
+      "file": "levitating-dua-lipa-160w.avif",
+      "kind": "avif-160w",
+      "kb": 4
+    },
+    {
+      "file": "lonely-akon-160w.webp",
+      "kind": "webp-160w",
+      "kb": 4
+    },
+    {
+      "file": "paaro-aditya-rikhari-320w.avif",
+      "kind": "avif-320w",
+      "kb": 4
+    },
+    {
+      "file": "perfect-ed-sheeran-160w.avif",
+      "kind": "avif-160w",
+      "kb": 4
+    },
+    {
+      "file": "piano-man-billy-joel-320w.avif",
+      "kind": "avif-320w",
+      "kb": 4
+    },
+    {
+      "file": "we-didnt-start-the-fire-billy-joel-320w.webp",
+      "kind": "webp-320w",
+      "kb": 4
+    },
+    {
+      "file": "attention-charlie-puth-160w.webp",
+      "kind": "webp-160w",
+      "kb": 3
+    },
+    {
+      "file": "chal-bombay-divine-160w.webp",
+      "kind": "webp-160w",
+      "kb": 3
+    },
+    {
+      "file": "lonely-akon-160w.avif",
+      "kind": "avif-160w",
+      "kb": 3
+    },
+    {
+      "file": "timeless-the-weeknd-160w.webp",
+      "kind": "webp-160w",
+      "kb": 3
+    },
+    {
+      "file": "we-didnt-start-the-fire-billy-joel-320w.avif",
+      "kind": "avif-320w",
+      "kb": 3
+    },
+    {
+      "file": "attention-charlie-puth-160w.avif",
+      "kind": "avif-160w",
+      "kb": 2
+    },
+    {
+      "file": "chal-bombay-divine-160w.avif",
+      "kind": "avif-160w",
+      "kb": 2
+    },
+    {
+      "file": "paaro-aditya-rikhari-160w.webp",
+      "kind": "webp-160w",
+      "kb": 2
+    },
+    {
+      "file": "paaro-aditya-rikhari-160w.avif",
+      "kind": "avif-160w",
+      "kb": 2
+    },
+    {
+      "file": "piano-man-billy-joel-160w.webp",
+      "kind": "webp-160w",
+      "kb": 2
+    },
+    {
+      "file": "timeless-the-weeknd-160w.avif",
+      "kind": "avif-160w",
+      "kb": 2
+    },
+    {
+      "file": "we-didnt-start-the-fire-billy-joel-160w.webp",
+      "kind": "webp-160w",
+      "kb": 2
+    },
+    {
+      "file": "we-didnt-start-the-fire-billy-joel-160w.avif",
+      "kind": "avif-160w",
+      "kb": 2
+    },
+    {
+      "file": "piano-man-billy-joel-160w.avif",
+      "kind": "avif-160w",
+      "kb": 1
+    }
+  ]
+}

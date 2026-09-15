@@ -10,6 +10,7 @@ import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { player, type PlayerState } from '../engine/playerStore'
 import { SAMPLE_LYRICS } from '../config/site'
 import { fmtTime } from '../lib/format'
+import CoverImage from './CoverImage'
 
 /* -- icons: minimal inline strokes, aria-hidden everywhere -- */
 const IconPlay = () => (
@@ -152,7 +153,7 @@ function Lyrics() {
 function Queue() {
   const { index, queueOpen } = usePlayer()
   return (
-    <div className={`np__queue ${queueOpen ? 'is-open' : ''}`} aria-hidden={!queueOpen}>
+    <div className={`np__queue ${queueOpen ? 'is-open' : ''}`} aria-hidden={!queueOpen} inert={!queueOpen}>
       <div className="np__queue-inner">
         {player.tracks.map((t, i) => (
           <button
@@ -201,18 +202,21 @@ export default function PhoneMock({ interactive = false }: { interactive?: boole
             <p className="np__context">{track.context}</p>
 
             <div className="np__stage">
-              <div
-                className="np__art"
-                aria-hidden="true"
-                style={
-                  {
-                    background: track.gradient,
-                    ...(track.coverUrl
-                      ? { backgroundImage: `url(${track.coverUrl})` }
-                      : {}),
-                  } as CSSProperties
-                }
-              />
+              {/* LCP slot (§20): gradient underlay + AVIF-first eager art. The
+                  art box is already reserved by np__art (aspect-ratio, cover-fill)
+                  → CLS stays 0 while the decoded image paints inside it. */}
+              <div className="np__art" aria-hidden="true">
+                {track.coverUrl ? (
+                  <CoverImage
+                    src={track.coverUrl}
+                    alt=""
+                    width={300}
+                    eager
+                    fetchPriority="high"
+                    className="cover-fill"
+                  />
+                ) : null}
+              </div>
               <Lyrics />
               <Queue />
             </div>
