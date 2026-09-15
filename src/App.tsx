@@ -23,6 +23,10 @@ import ContactPage from './pages/ContactPage'
 import { initCoverArt } from './config/site'
 import { SITE_URL } from './config/site'
 
+const HOME_TITLE = 'NightLight — Modern Android Music Player'
+const HOME_DESC =
+  'NightLight is a modern Android music player with mood-aware shuffle, contextual discovery, trending music, playlists, favorites, lyrics, and background playback.'
+
 export default function App() {
   useEffect(() => {
     initCoverArt().catch(console.warn)
@@ -38,11 +42,7 @@ export default function App() {
           <Route
             path="/"
             element={
-              <PageLayout
-                title="NightLight — Free Music Player for the Web"
-                description="NightLight is a free, modern web music player built for simple, fast and focused music listening directly in your browser."
-                canonical={SITE_URL}
-              >
+              <PageLayout title={HOME_TITLE} description={HOME_DESC} canonical={SITE_URL}>
                 <Homepage />
               </PageLayout>
             }
@@ -51,8 +51,8 @@ export default function App() {
             path="/about"
             element={
               <PageLayout
-                title="About NightLight"
-                description="Learn what NightLight is, why it exists, and what problem it aims to solve."
+                title="About NightLight — Android Music Player"
+                description="Learn what NightLight is, why it exists, and what problem it aims to solve as a modern Android music player."
                 canonical={`${SITE_URL}/about`}
               >
                 <AboutPage />
@@ -63,8 +63,8 @@ export default function App() {
             path="/features"
             element={
               <PageLayout
-                title="Features | NightLight"
-                description="Explore NightLight's features: adaptive visuals, three shuffle modes, time-synced lyrics, smart search, playlist import, and shared listening sessions."
+                title="Features | NightLight — Android Music Player"
+                description="Explore NightLight's Android music player features: mood-aware shuffle, contextual discovery, trending tracks, playlists, favorites, lyrics, background playback, and more."
                 canonical={`${SITE_URL}/features`}
               >
                 <FeaturesPage />
@@ -75,8 +75,8 @@ export default function App() {
             path="/how-it-works"
             element={
               <PageLayout
-                title="How It Works | NightLight"
-                description="Step-by-step guide to using NightLight: open the player, search or select music, control playback, and use player features."
+                title="How It Works | NightLight — Android Music Player"
+                description="Step-by-step guide to using the NightLight Android music player: install, discover, play, and use shuffle, favorites, playlists, lyrics, and background playback."
                 canonical={`${SITE_URL}/how-it-works`}
               >
                 <HowItWorksPage />
@@ -88,7 +88,7 @@ export default function App() {
             element={
               <PageLayout
                 title="Frequently Asked Questions | NightLight"
-                description="Answers to common questions about NightLight: pricing, installation, device support, music sources, playlists, keyboard controls, and more."
+                description="Answers to common questions about the NightLight Android music player: pricing, device support, music sources, playlists, mood-aware shuffle, lyrics, and more."
                 canonical={`${SITE_URL}/faq`}
               >
                 <FAQPage />
@@ -100,7 +100,7 @@ export default function App() {
             element={
               <PageLayout
                 title="Help & Documentation | NightLight"
-                description="Documentation for using NightLight: player controls, searching, queue management, playlists, playback, keyboard shortcuts, settings, and troubleshooting."
+                description="Documentation for the NightLight Android music player: getting started, searching, playing tracks, shuffle, playlists, favorites, lyrics, background playback, and troubleshooting."
                 canonical={`${SITE_URL}/help`}
               >
                 <HelpPage />
@@ -188,8 +188,8 @@ function AppShell({ title }: { title: string }) {
       }}>
         <h1 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', marginBottom: '16px' }}>{title}</h1>
         <p style={{ color: 'var(--c-text-2)', maxWidth: '480px', marginBottom: '24px' }}>
-          This is an application route. The interactive {title.toLowerCase()} interface will be implemented here.
-          Application routes do not display advertisements.
+          This is an application route. The interactive {title.toLowerCase()} interface lives inside
+          the NightLight Android app.
         </p>
         <a href="/" style={{ color: 'var(--c-accent)', textDecoration: 'underline' }}>← Back to NightLight</a>
       </div>

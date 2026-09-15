@@ -1,30 +1,29 @@
 /**
- * ABOUT PAGE (§6, §14)
- * --------------------
- * Genuine About page explaining what NightLight is, why it exists,
- * what problem it aims to solve, and who maintains it.
- * All information is truthful and based on actual product reality.
+ * ABOUT PAGE
+ * ----------
+ * Explains why the NightLight Android music player exists.
+ * The website is the landing page; the product is the Android app.
  */
 
 import { Eyebrow, Headline, Body } from '../ui/typography';
 import { DownloadButton } from '../ui/DownloadButton';
 import Reveal from '../ui/Reveal';
 import { InlineAdSlot } from '../components/AdSlot';
-import { SITE_URL } from '../config/site';
+import { SITE_URL, REPO_URL } from '../config/site';
 
 export default function AboutPage() {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
     name: 'About NightLight',
-    description: 'Learn what NightLight is, why it exists, and what problem it aims to solve.',
+    description: 'Learn what NightLight is, why it exists, and what problem it aims to solve as a modern Android music player.',
     mainEntity: {
       '@type': 'SoftwareApplication',
       name: 'NightLight',
       applicationCategory: 'MultimediaApplication',
-      operatingSystem: 'Web',
+      operatingSystem: 'Android',
       url: SITE_URL,
-      description: 'NightLight is a free, modern web music player designed for simple and focused music listening.',
+      description: 'NightLight is a modern Android music player built around contextual discovery, mood-aware listening, and everyday playback.',
     },
   };
 
@@ -41,7 +40,7 @@ export default function AboutPage() {
             <Eyebrow>About NightLight</Eyebrow>
             <Headline as="h1" id="about-title" size="xl">What NightLight is. And why.</Headline>
             <Body className="page-hero__lead" style={{ marginTop: '24px', fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)', maxWidth: 'none' }}>
-              NightLight is a free, browser-based music player built for people who want to listen — not manage, not discover, not share. Just listen.
+              NightLight is an Android music player built around how you actually listen — context, mood, and discovery, without losing the music.
             </Body>
           </Reveal>
         </div>
@@ -53,13 +52,20 @@ export default function AboutPage() {
           <Reveal>
             <Headline as="h2" id="what-is-title" size="md">What is NightLight?</Headline>
             <Body style={{ marginTop: '16px' }}>
-              NightLight is a music player that runs entirely in your web browser. No installation, no account creation, no background processes. You open the URL and the player is ready — instantly.
+              NightLight is a modern Android music player. It plays audio, shows album artwork,
+              syncs lyrics, manages playlists and favorites, and keeps playing in the background
+              while you use your phone.
             </Body>
             <Body style={{ marginTop: '16px' }}>
-              It plays audio, displays album artwork, shows time-synced lyrics, manages a playback queue, and offers three distinct shuffle modes. It adapts its visual intensity to your device and preferences — from a battery-sipping Low Power mode to a fully immersive Animation mode with rain, clouds, and parallax depth.
+              What makes it different is context. NightLight reads the moment — time of day,
+              weather, mood signals, and your listening history — and uses that context to
+              shape its recommendations and shuffle. Whether it's mood-aware shuffle, trending
+              tracks, weather-aware suggestions, or related-song discovery, the app is designed
+              so the music always fits where you are.
             </Body>
             <Body style={{ marginTop: '16px' }}>
-              NightLight also includes features you won't find in most players: playlist import from Spotify, Apple Music, and YouTube Music; shared listening sessions where multiple people hear the same track in sync; language-aware recommendations; and full keyboard control for power users.
+              The website you're reading is the landing page. The product is the Android app
+              you install on your phone.
             </Body>
           </Reveal>
         </article>
@@ -72,13 +78,15 @@ export default function AboutPage() {
           <Reveal>
             <Headline as="h2" id="why-exists-title" size="md">Why NightLight exists</Headline>
             <Body style={{ marginTop: '16px' }}>
-              The starting point was frustration. Modern music apps have become sprawling platforms — social feeds, algorithmic recommendations, podcasts, videos, live lyrics, artist bios, concert tickets, merchandise stores. The actual act of listening became a secondary feature buried under layers of engagement mechanics.
+              The starting point was a simple observation: most music players are built around a
+              search bar and a library, but listening is rarely a search problem. It's a context
+              problem. What feels right at 2:00 am on a rainy night is not what feels right on a
+              Monday morning commute.
             </Body>
             <Body style={{ marginTop: '16px' }}>
-              NightLight exists because some listeners want the opposite: a tool that does one thing well. Play music. Show the artwork. Sync the lyrics. Get out of the way.
-            </Body>
-            <Body style={{ marginTop: '16px' }}>
-              The web browser is the ideal platform for this. It's universal, zero-install, always up to date, and respects user boundaries. A browser-based player can be opened from a link, shared as a URL, and closed without leaving traces. NightLight embraces these properties instead of working around them.
+              NightLight exists for listeners who want a player that understands the moment —
+              one that surfaces the right music without making you hunt for it, and disappears
+              when you just want to play a song.
             </Body>
           </Reveal>
         </article>
@@ -88,16 +96,19 @@ export default function AboutPage() {
           <Reveal>
             <Headline as="h2" id="problem-title" size="md">The problem NightLight solves</Headline>
             <Body style={{ marginTop: '16px' }}>
-              <strong>Fragmentation.</strong> Your music is scattered across services — Spotify for some things, Apple Music for others, YouTube for live versions, local files for the rest. NightLight's playlist import lets you bring playlists from multiple sources into one player.
+              <strong>Discovery takes work.</strong> In most players, finding something new means
+              digging through recommendation feeds that don't understand your real listening
+              situation. NightLight's context engine surfaces music that fits the moment —
+              time, weather, and mood — without you asking.
             </Body>
             <Body style={{ marginTop: '16px' }}>
-              <strong>Distraction.</strong> Most players optimize for engagement time, not listening quality. NightLight optimizes for the listening experience: clean interface, artwork-first presentation, lyrics that arrive with the music, visual modes that match your energy level.
+              <strong>Shuffle doesn't understand mood.</strong> Random shuffle treats every track
+              equally. Smart Shuffle weights tracks against your context, so the queue flows with
+              you instead of against you.
             </Body>
             <Body style={{ marginTop: '16px' }}>
-              <strong>Platform lock-in.</strong> Native apps tie you to an ecosystem. NightLight runs in the browser — the most open platform there is. Your listening session is a URL you can bookmark, share, or continue on any device with a browser.
-            </Body>
-            <Body style={{ marginTop: '16px' }}>
-              <strong>Complexity for casual listening.</strong> Not every listening session needs a queue, a library, a profile, and a social graph. Sometimes you just want to play a song. NightLight makes that path as short as possible.
+              <strong>Listening shouldn't be a subscription.</strong> NightLight is free and open
+              source, with no premium tier hiding the good features.
             </Body>
           </Reveal>
         </article>
@@ -107,11 +118,11 @@ export default function AboutPage() {
           <Reveal>
             <Headline as="h2" id="focus-title" size="md">What the product focuses on</Headline>
             <ul style={{ marginTop: '16px', paddingLeft: '24px', lineHeight: '1.8' }}>
-              <li><strong>Playback quality.</strong> Gapless playback, accurate seeking, volume normalization, crossfade support.</li>
-              <li><strong>Visual craft.</strong> Album artwork drives the entire color palette. Lyrics set like typography. Atmosphere responds to the music.</li>
-              <li><strong>Intelligent defaults.</strong> Smart Shuffle understands context. Search understands intent. Visual mode adapts to device capabilities.</li>
-              <li><strong>Respect for the web.</strong> URLs for everything. No app shell. Progressive enhancement. Accessible by default.</li>
-              <li><strong>Performance.</strong> Code-split, lazy-loaded, optimized for Core Web Vitals. Low Power mode for constrained devices.</li>
+              <li><strong>Contextual listening.</strong> Time-of-day slots, weather hints, and mood detection feed every recommendation.</li>
+              <li><strong>Intelligent defaults.</strong> Mood-aware shuffle and contextual discovery are the norm, not an add-on.</li>
+              <li><strong>Modern Android.</strong> A real background media service, notification-based controls, and smooth playback.</li>
+              <li><strong>Library that respects you.</strong> Playlists, favorites, and search history live with you on your device.</li>
+              <li><strong>Open source.</strong> The code is public and MIT-licensed.</li>
             </ul>
           </Reveal>
         </article>
@@ -119,21 +130,18 @@ export default function AboutPage() {
         {/* TECHNOLOGIES */}
         <article className="about-section" aria-labelledby="tech-title" style={{ marginTop: 'clamp(64px, 10vh, 100px)' }}>
           <Reveal>
-            <Headline as="h2" id="tech-title" size="md">Technologies and platform</Headline>
+            <Headline as="h2" id="tech-title" size="md">Technology</Headline>
             <Body style={{ marginTop: '16px' }}>
-              NightLight is built with modern web technologies:
+              NightLight is a native Android application:
             </Body>
             <ul style={{ marginTop: '16px', paddingLeft: '24px', lineHeight: '1.8' }}>
-              <li><strong>React 19</strong> with TypeScript for the UI layer</li>
-              <li><strong>Vite</strong> for fast development and optimized production builds</li>
-              <li><strong>CSS custom properties</strong> for theming and motion control</li>
-              <li><strong>Web Audio API</strong> and <strong>HTMLMediaElement</strong> for playback</li>
-              <li><strong>IntersectionObserver</strong> and <strong>requestAnimationFrame</strong> for performant animations</li>
-              <li><strong>Vercel</strong> for global edge deployment</li>
+              <li><strong>Android</strong> — Java, min SDK 26 (Android 8.0), target SDK 34 (Android 14)</li>
+              <li><strong>ExoPlayer</strong> with audio focus and a 200 MB stream cache for smooth repeat plays</li>
+              <li><strong>MediaSessionService</strong> for proper background and lock-screen playback</li>
+              <li><strong>Room</strong> database for playlists, favorites, search history, and mood preferences</li>
+              <li><strong>Context engine</strong> combining time-of-day, weather, and mood into listening recommendations</li>
+              <li><strong>MongoDB-backed API</strong> for search, trending, lyrics, and related-song radio</li>
             </ul>
-            <Body style={{ marginTop: '16px' }}>
-              The project uses no heavy frameworks beyond React — no Electron, no Tauri, no native wrappers. It is a web application in the truest sense.
-            </Body>
           </Reveal>
         </article>
 
@@ -142,36 +150,21 @@ export default function AboutPage() {
           <Reveal>
             <Headline as="h2" id="maintainers-title" size="md">Who builds and maintains NightLight</Headline>
             <Body style={{ marginTop: '16px' }}>
-              NightLight is an independent project developed by a small team of engineers and designers who use the product themselves. It is not backed by a major label, a streaming service, a venture fund, or a corporate parent.
+              NightLight is an independent, open source project. It is built publicly — the code
+              lives on{' '}
+              <a href={REPO_URL} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--c-accent)' }}>
+                GitHub
+              </a>{' '}
+              under the MIT license, and bug reports, feature requests, and contributions are welcome.
             </Body>
-            <Body style={{ marginTop: '16px' }}>
-              The project is maintained publicly. Bug reports, feature requests, and contributions are welcome through the project's repository. There is no dedicated support team — responses depend on maintainer availability.
-            </Body>
-            <Body style={{ marginTop: '16px' }}>
-              NightLight does not have official social media accounts, a Discord server, or a community forum at this time. For critical issues (security, copyright, policy), use the contact information in the footer.
-            </Body>
-          </Reveal>
-        </article>
-
-        {/* WHAT NIGHTLIGHT IS NOT */}
-        <article className="about-section" aria-labelledby="not-title" style={{ marginTop: 'clamp(64px, 10vh, 100px)' }}>
-          <Reveal>
-            <Headline as="h2" id="not-title" size="md">What NightLight is not</Headline>
-            <ul style={{ marginTop: '16px', paddingLeft: '24px', lineHeight: '1.8' }}>
-              <li>NightLight is not a music streaming service. It does not host, license, or distribute music catalogs.</li>
-              <li>NightLight is not affiliated with Spotify, Apple Music, YouTube Music, or any other music platform.</li>
-              <li>NightLight does not claim ownership of any music, artwork, lyrics, or metadata displayed in the player.</li>
-              <li>NightLight is not a social network. There are no profiles, follows, likes, or public activity feeds.</li>
-              <li>NightLight does not collect personal listening data for advertising or profiling.</li>
-            </ul>
           </Reveal>
         </article>
 
         {/* CTA */}
         <Reveal delay={100}>
           <div style={{ textAlign: 'center', marginTop: 'clamp(80px, 12vh, 140px)' }}>
-            <DownloadButton>Download NightLight</DownloadButton>
-            <p className="micro" style={{ marginTop: '16px' }}>Or <a href="/" style={{ color: 'var(--c-accent)', textDecoration: 'underline' }}>start listening now</a> — no download required.</p>
+            <DownloadButton>Download NightLight for Android</DownloadButton>
+            <p className="micro" style={{ marginTop: '16px' }}>Requires Android 8.0 or newer.</p>
           </div>
         </Reveal>
       </main>

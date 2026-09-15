@@ -63,7 +63,7 @@ export default function PlayerExperience() {
           </div>
 
           <Micro className="rx__micro">
-            Interactive prototype — try the controls.
+            A preview of the now-playing experience in the Android app.
           </Micro>
         </div>
 

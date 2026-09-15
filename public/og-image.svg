@@ -32,14 +32,15 @@
   <!-- Title -->
   <text x="360" y="200" font-family="Space Grotesk, system-ui, sans-serif" font-size="64" font-weight="700" fill="#F4EEE5" letter-spacing="-1.6">NightLight</text>
   
-  <!-- Subtitle -->
-  <text x="360" y="275" font-family="Space Grotesk, system-ui, sans-serif" font-size="28" font-weight="400" fill="#B8B2A8">Free Music Player for the Web</text>
-  
+<!-- Subtitle -->
+  <text x="360" y="275" font-family="Space Grotesk, system-ui, sans-serif" font-size="28" font-weight="400" fill="#B8B2A8">Music after dark.</text>
+
   <!-- Accent line -->
   <line x1="360" y1="305" x2="580" y2="305" stroke="#D8B56A" stroke-width="3" stroke-linecap="round"/>
-  
+
   <!-- Description -->
-  <text x="360" y="355" font-family="Space Grotesk, system-ui, sans-serif" font-size="20" font-weight="400" fill="#8A847A" opacity="0.9">Simple, fast, focused music listening in your browser</text>
+  <text x="360" y="355" font-family="Space Grotesk, system-ui, sans-serif" font-size="20" font-weight="400" fill="#8A847A" opacity="0.9">Modern Android music player — mood-aware shuffle, contextual</text>
+  <text x="360" y="385" font-family="Space Grotesk, system-ui, sans-serif" font-size="20" font-weight="400" fill="#8A847A" opacity="0.9">discovery, trending tracks, lyrics, and background playback.</text>
   
   <!-- Phone mockup on right -->
   <g transform="translate(820, 140)">

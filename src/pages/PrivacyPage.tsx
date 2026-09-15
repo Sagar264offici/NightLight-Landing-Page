@@ -1,8 +1,7 @@
 /**
- * PRIVACY POLICY (§22)
- * ---------------------
- * Accurate privacy policy describing actual data practices.
- * No copied templates — only what NightLight actually does.
+ * PRIVACY POLICY
+ * ---------------
+ * Accurate privacy policy describing actual data practices for the Android app.
  */
 
 import { Eyebrow, Headline, Body, Micro } from '../ui/typography';
@@ -16,7 +15,7 @@ export default function PrivacyPage() {
     description: 'NightLight\'s privacy policy explaining what data is collected, how it\'s used, and your rights.',
   };
 
-  const lastUpdated = 'September 12, 2026';
+  const lastUpdated = 'September 15, 2026';
 
   return (
     <>
@@ -43,40 +42,37 @@ export default function PrivacyPage() {
           <Reveal>
             <Headline as="h2" id="summary-title" size="md">Summary</Headline>
             <Body style={{ marginTop: '16px' }}>
-              NightLight is a browser-based music player. We do not collect personal listening data, build advertising profiles, or sell your information. The only data stored is what you explicitly provide (preferences, playlists) and it stays in your browser unless you use a feature that requires sharing (like shared listening sessions).
+              NightLight is an Android music player. We do not collect personal listening data, build advertising profiles within the app, or sell your information. Preference, playlist, favorites, and search-history data is stored on your device. Where features share data (such as Listen Together sessions), that data is scoped to the session and ephemeral.
             </Body>
           </Reveal>
         </article>
 
         <article className="policy-section" aria-labelledby="data-collected-title" style={{ marginTop: '48px' }}>
           <Reveal>
-            <Headline as="h2" id="data-collected-title" size="md">Data stored in your browser</Headline>
-            <Body style={{ marginTop: '16px' }}>The following data is stored locally in your browser (localStorage/IndexedDB) and never transmitted to our servers:</Body>
+            <Headline as="h2" id="data-collected-title" size="md">Data stored on your device</Headline>
+            <Body style={{ marginTop: '16px' }}>The following data is stored locally on your Android device and is not transmitted to our servers:</Body>
             <ul style={{ marginTop: '16px', paddingLeft: '24px', lineHeight: '1.9' }}>
-              <li><strong>Playback preferences:</strong> Visual mode, default shuffle mode, language preference, lyrics auto-show, gapless playback, crossfade, volume normalization, hardware acceleration.</li>
-              <li><strong>Playback state:</strong> Current queue, playback position, volume level, repeat mode — for session restoration.</li>
-              <li><strong>Library data:</strong> Native playlists you create, imported playlist metadata (track names, match status), recently played tracks (for history).</li>
-              <li><strong>Search history:</strong> Recent queries (last 10) for quick access.</li>
+              <li><strong>Playback preferences:</strong> Shuffle and repeat modes, visual settings, mood preferences.</li>
+              <li><strong>Playback state:</strong> Current queue, playback position, volume level — for session restoration.</li>
+              <li><strong>Library data:</strong> Playlists you create, favorites you save, recently played tracks.</li>
+              <li><strong>Search history:</strong> Recent queries stored locally for quick access.</li>
             </ul>
-            <Body style={{ marginTop: '16px' }}>
-              You can clear all local data at any time by clearing browser storage for nightlightmusic.vercel.app, or by using the "Reset All Data" option in Settings (when available).
-            </Body>
           </Reveal>
         </article>
 
         <article className="policy-section" aria-labelledby="shared-listening-title" style={{ marginTop: '48px' }}>
           <Reveal>
-            <Headline as="h2" id="shared-listening-title" size="md">Shared listening sessions</Headline>
+            <Headline as="h2" id="shared-listening-title" size="md">Listen Together sessions</Headline>
             <Body style={{ marginTop: '16px' }}>
-              When you start a shared listening session, a session ID is generated and a WebRTC connection (or WebSocket relay) is established between participants. The following data is shared during the session:
+              When you start a Listen Together session, a session code is generated and participants connect in real time to keep playback in sync. The following data is shared during the session:
             </Body>
             <ul style={{ marginTop: '16px', paddingLeft: '24px', lineHeight: '1.9' }}>
               <li>Playback state: current track, timestamp, play/pause status (for synchronization)</li>
-              <li>Chat messages: text messages sent in the listening chat</li>
+              <li>Chat messages: text messages sent in the session chat</li>
               <li>Session metadata: host/guest role, connection status</li>
             </ul>
             <Body style={{ marginTop: '16px' }}>
-              This data exists only for the duration of the session. It is not logged, stored, or analyzed after the session ends. No participant identity is collected — sessions are anonymous by default.
+              This data exists only for the duration of the session and is not logged, stored, or analyzed after the session ends.
             </Body>
           </Reveal>
         </article>
@@ -85,13 +81,12 @@ export default function PrivacyPage() {
           <Reveal>
             <Headline as="h2" id="third-party-title" size="md">Third-party services</Headline>
             <Body style={{ marginTop: '16px' }}>
-              NightLight uses the following third-party services:
+              The NightLight Android app uses the following third-party services:
             </Body>
             <ul style={{ marginTop: '16px', paddingLeft: '24px', lineHeight: '1.9' }}>
-              <li><strong>Vercel (hosting):</strong> Logs standard HTTP access data (IP, timestamp, requested path, user agent) for security and performance monitoring. We do not access or use this data for analytics.</li>
-              <li><strong>Google AdSense (on content pages only):</strong> Displays advertisements on eligible content pages (/, /about, /features, /how-it-works, /faq, /help). AdSense may use cookies and collect data per Google\'s privacy policy. We do not control AdSense\'s data collection. Ads are NOT shown on application routes (player, search, library, settings, auth).</li>
-              <li><strong>Google Fonts (Space Grotesk):</strong> Loaded via Google Fonts API. Google\'s privacy policy applies.</li>
-              <li><strong>Cover art sources:</strong> Album artwork is fetched from public sources (MusicBrainz, Cover Art Archive) based on track metadata. These requests include the track/artist name but not your identity.</li>
+              <li><strong>Music API:</strong> NightLight searches, streams, and fetches lyrics and trending data through a MongoDB-backed music API. Queries include the terms and track metadata you request.</li>
+              <li><strong>Google Sign-In:</strong> Optional sign-in via Credential Manager/Firebase auth bridging. Only used when you choose to sign in.</li>
+              <li><strong>Playlist import:</strong> When you import a playlist from services like Spotify or YouTube, NightLight accesses the public playlist metadata you provide.</li>
             </ul>
           </Reveal>
         </article>
@@ -100,24 +95,7 @@ export default function PrivacyPage() {
           <Reveal>
             <Headline as="h2" id="analytics-title" size="md">Analytics and tracking</Headline>
             <Body style={{ marginTop: '16px' }}>
-              NightLight does not use Google Analytics, Mixpanel, Segment, Amplitude, or any similar analytics/tracking service. We do not track page views, events, funnels, or user behavior. The only metrics we have are aggregate server logs from Vercel (request counts, error rates, bandwidth) which contain no personal identifiers.
-            </Body>
-          </Reveal>
-        </article>
-
-        <article className="policy-section" aria-labelledby="cookies-title" style={{ marginTop: '48px' }}>
-          <Reveal>
-            <Headline as="h2" id="cookies-title" size="md">Cookies</Headline>
-            <Body style={{ marginTop: '16px' }}>
-              NightLight does not set first-party cookies for tracking or analytics. The following cookies may be set:
-            </Body>
-            <ul style={{ marginTop: '16px', paddingLeft: '24px', lineHeight: '1.9' }}>
-              <li><strong>Session cookie (shared listening):</strong> Temporary cookie for WebSocket session affinity during a shared listening session. Expires when the session ends.</li>
-              <li><strong>Google AdSense cookies:</strong> On ad-eligible content pages, AdSense may set cookies per Google\'s policy. These are third-party cookies controlled by Google.</li>
-              <li><strong>Vercel cookies:</strong> Vercel may set infrastructure cookies for load balancing and security.</li>
-            </ul>
-            <Body style={{ marginTop: '16px' }}>
-              All preferences and state are stored in localStorage/IndexedDB, not cookies.
+              NightLight does not use third-party analytics, advertising, or tracking SDKs inside the Android app. There are no tracking cookies, no advertising identifiers, and no usage profiling. Your listening behavior stays on your device.
             </Body>
           </Reveal>
         </article>
@@ -126,16 +104,15 @@ export default function PrivacyPage() {
           <Reveal>
             <Headline as="h2" id="rights-title" size="md">Your rights</Headline>
             <Body style={{ marginTop: '16px' }}>
-              Since NightLight stores data locally in your browser, you have full control:
+              Because NightLight stores your library, preferences, favorites, and search history locally on your device, you have full control:
             </Body>
             <ul style={{ marginTop: '16px', paddingLeft: '24px', lineHeight: '1.9' }}>
-              <li><strong>Access:</strong> Open browser dev tools → Application → Local Storage / IndexedDB to view all stored data.</li>
-              <li><strong>Deletion:</strong> Clear site data in browser settings, or use the in-app reset (when available).</li>
-              <li><strong>Portability:</strong> Export localStorage/IndexedDB data via browser tools.</li>
-              <li><strong>Objection:</strong> Disable JavaScript or block third-party scripts to prevent AdSense loading.</li>
+              <li><strong>Access:</strong> View your playlists, favorites, and history inside the app or your device's app data.</li>
+              <li><strong>Deletion:</strong> Remove playlists, favorites, and search history inside the app, or clear the app's data in Android settings.</li>
+              <li><strong>Portability:</strong> Your library data lives in local storage on your device.</li>
             </ul>
             <Body style={{ marginTop: '16px' }}>
-              If you are in a jurisdiction with specific data protection rights (GDPR, CCPA, etc.), the above mechanisms satisfy access, deletion, and portability requirements because the data never leaves your device (except for shared listening sessions, which are ephemeral and anonymous).
+              If you are in a jurisdiction with specific data protection rights (GDPR, CCPA, etc.), the above mechanisms satisfy access, deletion, and portability requirements because your personal data stays on your device.
             </Body>
           </Reveal>
         </article>

@@ -56,10 +56,10 @@ export default function ContactPage() {
             <ul style={{ marginTop: '16px', paddingLeft: '24px', lineHeight: '1.9' }}>
               <li>What you were doing when it happened</li>
               <li>What you expected vs. what actually happened</li>
-              <li>Browser and version (e.g., Chrome 128, Safari 17)</li>
-              <li>Device and OS (e.g., iPhone 15 / iOS 17, Windows 11 / Chrome 128)</li>
+              <li>App version (from the app's Settings/About or device app info)</li>
+              <li>Device model and Android version (e.g., Pixel 8 / Android 14)</li>
               <li>Steps to reproduce (if reproducible)</li>
-              <li>Console errors (open DevTools → Console, copy any red errors)</li>
+              <li>Any error messages or crashes shown</li>
             </ul>
             <Body style={{ marginTop: '16px' }}>
               Submit via the project's GitHub Issues page (preferred) or email.
@@ -93,7 +93,7 @@ export default function ContactPage() {
               <li>Specify the requested action (removal, attribution correction)</li>
             </ul>
             <Body style={{ marginTop: '16px' }}>
-              We will respond promptly to valid notices. Note: NightLight does not host music files — it plays from sources you provide or that are available via supported integrations.
+              We will respond promptly to valid notices. Note: NightLight is a player — it plays audio through a music API, not a catalog it hosts.
             </Body>
           </Reveal>
         </article>
@@ -102,7 +102,7 @@ export default function ContactPage() {
           <Reveal>
             <Headline as="h2" id="policy-title" size="md">Policy questions</Headline>
             <Body style={{ marginTop: '16px' }}>
-              Questions about Privacy Policy, Terms of Service, AdSense implementation, or other policies.
+              Questions about Privacy Policy, Terms of Service, or other policies.
             </Body>
           </Reveal>
         </article>
@@ -137,9 +137,9 @@ export default function ContactPage() {
             <Headline as="h2" id="what-not-to-contact-title" size="md">What we can't help with</Headline>
             <ul style={{ marginTop: '16px', paddingLeft: '24px', lineHeight: '1.9' }}>
               <li>Music licensing or royalty questions (we don't license music)</li>
-              <li>Requests to add specific songs to a catalog (we don't have a catalog)</li>
-              <li>Account recovery (no accounts exist)</li>
-              <li>Feature requests for services we don't control (Spotify, Apple Music, etc.)</li>
+              <li>Requests to add specific songs to a catalog (we don't host a catalog)</li>
+              <li>Account recovery (no required accounts exist)</li>
+              <li>Feature requests for services we don't control (Spotify, YouTube Music, etc.)</li>
               <li>General music recommendations</li>
             </ul>
           </Reveal>

@@ -1,7 +1,7 @@
 {
   "name": "NightLight",
   "short_name": "NightLight",
-  "description": "Free modern web music player",
+  "description": "Modern Android music player with mood-aware shuffle, contextual discovery, trending tracks, and more.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#05070A",

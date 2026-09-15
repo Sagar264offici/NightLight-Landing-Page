@@ -14,7 +14,7 @@ interface DownloadButtonProps {
 }
 
 export function DownloadButton({
-  children = 'Download NightLight',
+  children = 'Download NightLight for Android',
   variant = 'primary',
   className = '',
 }: DownloadButtonProps) {

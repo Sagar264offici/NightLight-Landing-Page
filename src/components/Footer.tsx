@@ -1,6 +1,5 @@
 /**
- * FOOTER (§37) — minimal. Brand, small nav, legal/social only when real
- * links exist. One honest microcopy line about the prototype assets.
+ * FOOTER — brand, nav, legal, and the open-source link.
  */
 import { APP_NAME, NAV_LINKS, PRIVACY_URL, TERMS_URL, SOCIAL_LINKS } from '../config/site'
 
@@ -33,8 +32,7 @@ export default function Footer() {
         </nav>
 
         <p className="footer__note">
-          Songs, artwork and lyrics shown are placeholders — the prototype runs
-          without audio.
+          NightLight is a modern Android music player. Free. Open source. Built for the night.
         </p>
         <p className="footer__legal">© {new Date().getFullYear()} {APP_NAME}</p>
       </div>

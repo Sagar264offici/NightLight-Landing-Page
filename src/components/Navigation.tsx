@@ -59,7 +59,7 @@ export default function Navigation() {
 
         <div className="nav__actions">
           <DownloadButton variant="nav" className="nav__cta">
-            Download
+            Get the app
           </DownloadButton>
           <button
             ref={triggerRef}
@@ -98,7 +98,7 @@ export default function Navigation() {
             </a>
           ))}
           <div className="nav__menu-cta" style={{ '--i': NAV_LINKS.length } as React.CSSProperties}>
-            <DownloadButton>Download NightLight</DownloadButton>
+            <DownloadButton>Get NightLight for Android</DownloadButton>
           </div>
         </nav>
       </div>

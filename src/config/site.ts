@@ -2,11 +2,16 @@
  * NIGHTLIGHT — CENTRAL CONFIGURATION
  * ----------------------------------
  * Single source of truth for every value a real launch will replace.
- * Nothing else in the codebase hardcodes these (directives §17, §64).
+ * Nothing else in the codebase hardcodes these.
  */
 
 export const APP_NAME = 'NightLight'
 export const TAGLINE = 'Music after dark.'
+export const APP_DESCRIPTOR = 'Android Music Player'
+
+/** Semantic product descriptor — the entity NightLight says it is. */
+export const PRODUCT_DESCRIPTION =
+  'NightLight is a modern Android media player for music and audio streaming. It pairs a clean, focused listening experience with contextual discovery — mood-aware shuffle, weather and time-aware recommendations, trending music, and smart search — so playback always fits the moment you are in.'
 
 /* ------------------------------------------------------------------ */
 /* DOWNLOAD ARCHITECTURE — change ONE value, every CTA updates.        */
@@ -34,8 +39,11 @@ export const SOCIAL_PREVIEW_IMAGE = 'https://nightlightmusic.vercel.app/og-image
 /** Legal + social links. Only rendered when configured — never faked. */
 export const PRIVACY_URL = '/privacy'
 export const TERMS_URL = '/terms'
+
+/** Project repository — Open Source, MIT licensed. */
+export const REPO_URL = 'https://github.com/Sagar264offici/NightLight'
 export const SOCIAL_LINKS: ReadonlyArray<{ label: string; href: string }> = [
-  // { label: 'X', href: 'https://x.com/nightlight' },
+  { label: 'GitHub', href: REPO_URL },
 ]
 
 /* ------------------------------------------------------------------ */

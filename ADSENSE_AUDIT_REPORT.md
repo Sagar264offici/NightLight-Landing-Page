@@ -32,13 +32,13 @@ The original site was a single-page application (SPA) with all content on `/` in
 
 | Route | Title | Word Count (approx.) | Purpose |
 |-------|-------|---------------------|---------|
-| `/` | Homepage — Free Music Player for the Web | ~1,800 | Hero, What Is NightLight, How It Works, Core Features (8), Why Browser-Based, Product Interface, Getting Started, FAQ Preview, About Brief |
+| `/` | Homepage — Modern Android Music Player | ~1,800 | Hero, What Is NightLight, How It Works, Core Features (10), Product Dossier, Product Interface, Why NightLight, FAQ Preview, Final CTA |
 | `/about` | About NightLight | ~1,200 | What NightLight is, why it exists, problem it solves, product focus, technologies, who maintains it, what it is NOT |
-| `/features` | Features | ~2,000 | 8 detailed features with: name, what it does, user benefit, how to use. Plus full keyboard shortcuts reference |
-| `/how-it-works` | How It Works | ~1,500 | 5-step flow (Open → Search → Select → Control → Features), visual modes deep-dive, shuffle modes deep-dive |
-| `/faq` | Frequently Asked Questions | ~2,200 | 25 factual Q&As across 5 categories (General, Playback, Content, Technical, Privacy) |
-| `/help` | Help & Documentation | ~2,500 | 8 sections: Player Controls, Searching, Queue Management, Playlists, Playback Controls, Keyboard Shortcuts, Settings, Troubleshooting (8 issues) |
-| `/privacy` | Privacy Policy | ~1,000 | Data stored locally, shared listening sessions, third-party services (Vercel, AdSense, Google Fonts, cover art), no analytics, cookies, user rights, children's privacy |
+| `/features` | Features | ~2,000 | 10 detailed features with: name, what it does, user benefit, how to use, plus shuffle modes |
+| `/how-it-works` | How It Works | ~1,500 | Install flow (5 steps: Download → Install → Open → Discover → Play), shuffle modes deep-dive, repeat modes |
+| `/faq` | Frequently Asked Questions | ~2,200 | 24 factual Q&As across 5 categories (General, Getting Started, Content, Technical, Privacy) |
+| `/help` | Help & Documentation | ~2,500 | 10 sections: Getting Started, Home Screen, Searching, Playing Music, Shuffle, Playlists, Favorites, Lyrics, Background Playback, Contextual Discovery. Troubleshooting (8 issues) |
+| `/privacy` | Privacy Policy | ~1,000 | Data stored on device (playlists, favorites, search history), Listen Together sessions, third-party services (Vercel, AdSense, Google Fonts, cover art), no analytics, cookies, user rights, children's privacy |
 | `/terms` | Terms of Service | ~800 | Acceptance, what NightLight is, no account required, content/IP, acceptable use, disclaimers, liability, indemnification, third-party links, changes, governing law |
 | `/contact` | Contact | ~600 | Bug reports, content issues, copyright concerns, policy questions, contact methods (GitHub Issues, email), security vulnerabilities, what we can't help with |
 
@@ -119,59 +119,57 @@ The original site was a single-page application (SPA) with all content on `/` in
 **All content is original, written specifically for NightLight. No scraping, paraphrasing, or keyword stuffing.**
 
 ### Homepage (~1,800 words)
-- Hero: Product positioning statement
-- What Is NightLight: Core explanation (browser-based, no install, no account)
-- Simpler Way to Listen: Differentiation from algorithm-driven apps
-- Why Use NightLight: 5 feature-benefit pairs
-- How It Works: 5-step numbered flow
-- Core Features: 8 features with icons, descriptions, usage guidance
-- Why Browser-Based: 5 philosophical/technical reasons
-- Product Interface: Visual walkthrough with captions
-- Getting Started: 5 actionable tips (shortcuts, modes, shuffle, lyrics, import)
+- Hero: Product positioning statement ("Music for the moment you're in.")
+- What Is NightLight: Android music player built around contextual discovery
+- How It Works: Install → Open → Discover → Play
+- Core Features: 10 features (mood shuffle, contextual discovery, trending, time+weather context, player, playlists, favorites, lyrics, background playback, Listen Together)
+- Product Dossier: Mood-aware shuffle, contextual discovery, trending, time + weather, the player, playlists + favorites, lyrics + background playback
+- Product Interface: Visual walkthrough with captions (phone mockup + waveform)
+- Why NightLight: Feature-benefit pairs about how the player adapts to context
 - FAQ Preview: 5 expandable questions linking to full FAQ
-- About Brief: Project independence, tech stack, maintainer transparency
 
 ### About Page (~1,200 words)
-- What NightLight is (player, not service)
+- What NightLight is (Android music player, not a service)
 - Why it exists (frustration with bloated apps)
 - Problem it solves (fragmentation, distraction, lock-in, complexity)
-- Product focus (playback quality, visual craft, intelligent defaults, web respect, performance)
-- Technologies (React 19, TypeScript, Vite, Web Audio API, Vercel)
+- Product focus (playback quality, visual craft, intelligent defaults, Android native, performance)
+- Technologies (Java, ExoPlayer, Room, MongoDB API, Material suggestions)
 - Who maintains it (independent team, no corporate backing)
 - What NightLight is NOT (not a streaming service, not affiliated, no content ownership, no social network, no data collection)
 
 ### Features Page (~2,000 words)
-- 8 features: Adaptive Visual Modes, Three Shuffle Modes, Synced Lyrics, Smart Search, Playlist Import, Shared Listening, Language-Aware, Keyboard Shortcuts
-- Each: name, category, what it does, user benefit, how to use
-- Full keyboard shortcuts reference (3 categories, 20+ shortcuts)
+- 10 features: Mood-Aware Shuffle, Contextual Discovery, Trending, Time + Weather Context, The Player, Playlists, Favorites, Background Playback, Synced Lyrics, Listen Together
+- Each: name, what it does, user benefit, how to use
+- Shuffle modes comparison (Off / Normal / Smart)
 
 ### How It Works Page (~1,500 words)
-- 5 main steps with details and keyboard shortcuts
-- Visual modes comparison table (Low Power / Ambient / Animation)
-- Shuffle modes comparison (Off / Smart / Random)
+- 5 main steps: Download, Install, Open & grant permissions, Discover & explore, Play & personalize
+- Shuffle modes comparison (Off / Normal / Smart)
+- Repeat modes comparison (Off / All / One)
 
 ### FAQ Page (~2,200 words)
-- 25 questions across 5 categories
+- 24 questions across 5 categories
 - All answers factual, no fabricated legal claims
 - Schema.org FAQPage structured data
 
 ### Help Page (~2,500 words)
-- 8 documentation sections with actionable guidance
+- 10 documentation sections: Getting Started, Home Screen, Searching, Playing Music, Shuffle, Playlists, Favorites, Lyrics, Background Playback, Contextual Discovery
 - Troubleshooting: 8 common issues with solutions
 - Table of contents with anchor links
 
 ### Privacy Policy (~1,000 words)
-- Local-only data storage (preferences, playback state, library, search history)
-- Shared listening session data (ephemeral, anonymous)
+- Device-stored data (playlists, favorites, search history kept on your phone)
+- Listen Together session data (ephemeral, anonymous)
+- Foreground-only background media playback (Android media service explained)
 - Third-party services (Vercel, AdSense, Google Fonts, cover art sources)
 - No analytics/tracking
 - Cookie usage (session only, no tracking cookies)
-- User rights (access, deletion, portability via browser tools)
+- User rights (access, deletion, portability via the app)
 - Children's privacy
 
 ### Terms of Service (~800 words)
 - Acceptance, service description, no account required
-- Content/IP (player code proprietary, third-party content owned by rights holders)
+- Content/IP (player code, third-party content owned by rights holders)
 - Acceptable use, disclaimers, limitation of liability
 - Third-party links, changes, governing law
 
@@ -227,15 +225,15 @@ Sitemap: https://nightlightmusic.vercel.app/sitemap.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://nightlightmusic.vercel.app/</loc><lastmod>2026-09-12</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://nightlightmusic.vercel.app/about</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://nightlightmusic.vercel.app/features</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://nightlightmusic.vercel.app/how-it-works</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://nightlightmusic.vercel.app/faq</loc><lastmod>2026-09-12</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://nightlightmusic.vercel.app/help</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://nightlightmusic.vercel.app/privacy</loc><lastmod>2026-09-12</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://nightlightmusic.vercel.app/terms</loc><lastmod>2026-09-12</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://nightlightmusic.vercel.app/contact</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://nightlightmusic.vercel.app/</loc><lastmod>2026-09-15</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://nightlightmusic.vercel.app/about</loc><lastmod>2026-09-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nightlightmusic.vercel.app/features</loc><lastmod>2026-09-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nightlightmusic.vercel.app/how-it-works</loc><lastmod>2026-09-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nightlightmusic.vercel.app/faq</loc><lastmod>2026-09-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nightlightmusic.vercel.app/help</loc><lastmod>2026-09-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nightlightmusic.vercel.app/privacy</loc><lastmod>2026-09-15</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://nightlightmusic.vercel.app/terms</loc><lastmod>2026-09-15</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://nightlightmusic.vercel.app/contact</loc><lastmod>2026-09-15</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>
 ```
 
@@ -264,7 +262,7 @@ Sitemap: https://nightlightmusic.vercel.app/sitemap.xml
 - `/about`: AboutPage + SoftwareApplication
 - `/features`: ItemList of SoftwareFeature
 - `/how-it-works`: HowTo with 5 HowToStep
-- `/faq`: FAQPage with 25 Question/Answer pairs
+- `/faq`: FAQPage with 24 Question/Answer pairs
 - `/help`: TechArticle
 - `/privacy`: WebPage
 - `/terms`: WebPage

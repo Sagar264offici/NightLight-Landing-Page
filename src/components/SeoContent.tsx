@@ -1,6 +1,6 @@
 /**
  * SEO CONTENT — semantic product explanation for search engines and accessibility.
- * Provides crawlable, structured content about what NightLight is and why use it.
+ * Provides crawlable, structured content describing the NightLight Android app.
  */
 import { Headline, Body } from '../ui/typography'
 
@@ -13,16 +13,21 @@ export default function SeoContent() {
             What is NightLight?
           </Headline>
           <Body>
-            NightLight is a free music player that runs entirely in your web browser. No installation required — just open the page and start listening. It's designed for people who want a simple, focused music experience without the complexity of traditional streaming apps.
+            NightLight is a modern Android music player. It pairs a focused, beautiful playback
+            experience with contextual discovery — mood-aware shuffle, trending tracks, weather
+            and time-aware recommendations, and related-song radio.
           </Body>
         </div>
 
         <div className="seo-content__section">
           <Headline as="h2" id="simpler-way-to-listen" size="md">
-            A simpler way to listen to music
+            A music player that adapts to the moment
           </Headline>
           <Body>
-            Most music players are built around playlists, algorithms, and social features. NightLight takes a different approach: it's a lightweight, distraction-free player that puts your music first. The interface stays out of your way so you can focus on the listening experience.
+            Most music players are built around search and libraries. NightLight is built around
+            listening context. The app reads the time of day, weather, mood signals, and your
+            listening history to shape recommendations and shuffle — the music fits where you are,
+            not the other way around.
           </Body>
         </div>
 
@@ -32,24 +37,20 @@ export default function SeoContent() {
           </Headline>
           <ul className="seo-content__features">
             <li>
-              <Headline as="h3" size="md">Free and open</Headline>
-              <Body>No subscription, no account required. Just music.</Body>
+              <Headline as="h3" size="md">Free and open source</Headline>
+              <Body>No subscription, no premium tier. The code is public under the MIT license.</Body>
             </li>
             <li>
-              <Headline as="h3" size="md">Works in any browser</Headline>
-              <Body>Runs on desktop, mobile, tablet — anywhere with a modern browser.</Body>
+              <Headline as="h3" size="md">Contextual discovery</Headline>
+              <Body>Trending tracks, weather and time-aware recommendations, and related-song radio keep discovery fresh.</Body>
             </li>
             <li>
-              <Headline as="h3" size="md">Focused on the music</Headline>
-              <Body>Clean interface, album artwork, synced lyrics, and smart shuffle modes — all designed around the listening experience.</Body>
+              <Headline as="h3" size="md">A complete Android player</Headline>
+              <Body>Playlists, favorites, synced lyrics, background playback, and a modern now-playing screen.</Body>
             </li>
             <li>
-              <Headline as="h3" size="md">Lightweight and fast</Headline>
-              <Body>No heavy electron wrapper, no background processes. Loads instantly and uses minimal resources.</Body>
-            </li>
-            <li>
-              <Headline as="h3" size="md">Modern web technology</Headline>
-              <Body>Built with React 19, optimized for performance with code splitting and lazy loading.</Body>
+              <Headline as="h3" size="md">Background playback</Headline>
+              <Body>Music keeps playing through locks and app switches via a proper Android media service.</Body>
             </li>
           </ul>
         </div>

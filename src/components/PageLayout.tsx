@@ -75,7 +75,7 @@ export default function PageLayout({
       'og:image': ogImage,
       'og:image:width': '1200',
       'og:image:height': '630',
-      'og:image:alt': 'NightLight web music player',
+      'og:image:alt': 'NightLight — Android music player interface',
     };
 
     Object.entries(ogTags).forEach(([property, content]) => {
@@ -94,7 +94,7 @@ export default function PageLayout({
       'twitter:title': title,
       'twitter:description': description,
       'twitter:image': ogImage,
-      'twitter:image:alt': 'NightLight web music player',
+      'twitter:image:alt': 'NightLight — Android music player interface',
     };
 
     Object.entries(twitterTags).forEach(([name, content]) => {

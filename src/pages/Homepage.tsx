@@ -1,21 +1,20 @@
 /**
- * HOMEPAGE (§3, §19, §32)
- * -----------------------
- * Transformed into a real product/publisher page with substantial original content.
- * Architecture:
- * - Hero: Product introduction + primary CTA
- * - What Is NightLight: Core product explanation
- * - How It Works: Step-by-step flow
- * - Core Features: Actual features from the codebase
- * - Why Browser-Based: Product philosophy
- * - Product Screenshots/Interface: Visual explanation
- * - Getting Started: Actionable guidance
- * - FAQ Preview: Links to full FAQ
- * - About NightLight: Brief + link to full page
- * - Footer navigation
- * 
- * Ads: Eligible for ads (content route). AdSlot components placed
- * in content-appropriate positions, NOT next to interactive controls.
+ * HOMEPAGE
+ * --------
+ * A cinematic product story for NIGHTLIGHT — THE ANDROID MUSIC PLAYER.
+ * Structure:
+ * - Hero (Android positioning)
+ * - What NightLight is
+ * - Mood-aware shuffle
+ * - Contextual discovery
+ * - Trending tracks
+ * - Time + weather context
+ * - The player
+ * - Playlists + favorites
+ * - Lyrics + background playback
+ * - Why NightLight
+ * - FAQ preview
+ * - Final CTA
  */
 
 import { Eyebrow, Headline, Body, Micro } from '../ui/typography';
@@ -23,7 +22,7 @@ import { DownloadButton, SecondaryButton } from '../ui/DownloadButton';
 import Reveal from '../ui/Reveal';
 import DeviceShowcase from '../components/DeviceShowcase';
 import { InlineAdSlot } from '../components/AdSlot';
-import { SITE_URL } from '../config/site';
+import { SITE_URL, REPO_URL } from '../config/site';
 
 export default function Homepage() {
   const structuredData = [
@@ -32,38 +31,35 @@ export default function Homepage() {
       '@type': 'SoftwareApplication',
       name: 'NightLight',
       applicationCategory: 'MultimediaApplication',
-      operatingSystem: 'Web',
+      operatingSystem: 'Android',
       url: SITE_URL,
-      description: 'NightLight is a free, modern web music player designed for simple and focused music listening.',
+      description:
+        'NightLight is a modern Android music player built around contextual discovery, mood-aware shuffle, trending music, playlists, favorites, synced lyrics, and background playback.',
       offers: {
         '@type': 'Offer',
         price: '0',
         priceCurrency: 'USD',
       },
       featureList: [
-        'Adaptive visual modes (Low Power, Ambient, Animation)',
-        'Three shuffle modes (Off, Smart, Random)',
+        'Mood-aware smart shuffle',
+        'Contextual music discovery',
+        'Trending tracks',
+        'Weather and time-aware recommendations',
+        'Playlists',
+        'Favorites',
+        'Background playback',
         'Time-synced lyrics',
-        'Smart search with variant detection',
-        'Playlist import from Spotify, Apple Music, YouTube Music',
-        'Shared listening sessions with synced playback',
-        'Language-aware recommendations',
-        'Keyboard shortcuts',
+        'Listen Together sessions',
       ],
+      sameAs: [REPO_URL],
     },
     {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: 'NightLight',
       url: SITE_URL,
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: {
-          '@type': 'EntryPoint',
-          urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
-        },
-        'query-input': 'required name=search_term_string',
-      },
+      description:
+        'NightLight is a modern Android music player with mood-aware shuffle, contextual discovery, trending music, playlists, favorites, lyrics, and background playback.',
     },
   ];
 
@@ -78,20 +74,22 @@ export default function Homepage() {
       <section className="hero" id="top" data-section="hero" aria-labelledby="hero-title">
         <div className="hero__inner">
           <div className="hero__copy">
-            <Eyebrow>Free Music Player for the Web</Eyebrow>
+            <Eyebrow>Android Music Player</Eyebrow>
             <Headline as="h1" id="hero-title" size="xl">
-              NightLight
+              Music for
               <br />
-              — Free Music Player for the Web
+              the moment you're in.
             </Headline>
             <Body className="hero__sub">
-              NightLight is a free, modern web music player built for simple, fast and focused music listening directly in your browser. No installation, no account required — just open and listen.
+              NightLight is a modern Android music player built around smarter
+              discovery, contextual listening, and a beautifully focused playback
+              experience.
             </Body>
             <div className="hero__ctas">
-              <DownloadButton>Download NightLight</DownloadButton>
+              <DownloadButton>Download for Android</DownloadButton>
               <SecondaryButton href="#what-is-nightlight">Explore the experience</SecondaryButton>
             </div>
-            <Micro className="hero__micro">Free · Works in your browser · No account needed</Micro>
+            <Micro className="hero__micro">Free · Android 8.0+ · Open source on GitHub</Micro>
           </div>
 
           <div className="hero__device">
@@ -109,45 +107,47 @@ export default function Homepage() {
         <div className="seo-content__inner">
           <Reveal>
             <div className="seo-content__section">
-              <Headline as="h2" id="what-is-title" size="md">What is NightLight?</Headline>
+              <Eyebrow>What NightLight is</Eyebrow>
+              <Headline as="h2" id="what-is-title" size="lg">An Android music player designed around how you actually listen.</Headline>
               <Body>
-                NightLight is a free music player that runs entirely in your web browser. Unlike traditional streaming services that require apps, subscriptions, or accounts, NightLight opens instantly in any modern browser — desktop, mobile, or tablet. It's designed for people who want a simple, focused music experience without the complexity of algorithm-driven feeds, social features, or heavy software installations.
+                NightLight is an Android app for discovering and playing music. It pairs a modern,
+                focused player with contextual intelligence — the music adapts to the moment:
+                the time of day, the weather outside, your mood, and your listening history.
               </Body>
             </div>
           </Reveal>
 
           <Reveal delay={100}>
             <div className="seo-content__section">
-              <Headline as="h2" id="simpler-way" size="md">A simpler way to listen to music</Headline>
+              <Headline as="h3" size="md">Not another search-and-play clone</Headline>
               <Body>
-                Most music players are built around playlists, algorithms, and social features. NightLight takes a different approach: it's a lightweight, distraction-free player that puts your music first. The interface stays out of your way so you can focus on the listening experience. There are no recommendations you didn't ask for, no autoplay videos, no cluttered sidebars — just your music, presented beautifully.
+                Most music players are built around a search bar. NightLight is built around
+                listening context. Mood-aware shuffle, weather and time-aware recommendations,
+                trending music, and contextual discovery all work together to make finding
+                something to play feel effortless.
               </Body>
             </div>
           </Reveal>
 
           <Reveal delay={200}>
             <div className="seo-content__section">
-              <Headline as="h2" id="why-nightlight" size="md">Why use NightLight?</Headline>
+              <Headline as="h3" size="md">A modern Android experience</Headline>
               <ul className="seo-content__features">
                 <li>
-                  <Headline as="h3" size="md">Free and open</Headline>
-                  <Body>No subscription, no account required. Just music.</Body>
+                  <Headline as="h4" size="md">Background playback</Headline>
+                  <Body>Music keeps playing when you lock your screen, switch apps, or put the phone away.</Body>
                 </li>
                 <li>
-                  <Headline as="h3" size="md">Works in any browser</Headline>
-                  <Body>Runs on desktop, mobile, tablet — anywhere with a modern browser.</Body>
+                  <Headline as="h4" size="md">Synced lyrics</Headline>
+                  <Body>Follow along line by line, set in a dedicated lyrics view.</Body>
                 </li>
                 <li>
-                  <Headline as="h3" size="md">Focused on the music</Headline>
-                  <Body>Clean interface, album artwork, synced lyrics, and smart shuffle modes — all designed around the listening experience.</Body>
+                  <Headline as="h4" size="md">Playlists and favorites</Headline>
+                  <Body>Build your library your way. Save tracks, curate playlists, revisit them anytime.</Body>
                 </li>
                 <li>
-                  <Headline as="h3" size="md">Lightweight and fast</Headline>
-                  <Body>No heavy electron wrapper, no background processes. Loads instantly and uses minimal resources.</Body>
-                </li>
-                <li>
-                  <Headline as="h3" size="md">Modern web technology</Headline>
-                  <Body>Built with React 19, optimized for performance with code splitting and lazy loading.</Body>
+                  <Headline as="h4" size="md">Free and open source</Headline>
+                  <Body>No subscription, no paywall. Licensed under MIT — the source is public.</Body>
                 </li>
               </ul>
             </div>
@@ -155,17 +155,20 @@ export default function Homepage() {
         </div>
       </section>
 
-      {/* INLINE AD - After intro content, before feature deep-dive */}
+      {/* INLINE AD - After intro content */}
       <InlineAdSlot slotName="homepage-after-intro" />
 
-      {/* HOW IT WORKS */}
+      {/* HOW IT WORKS - Product flow summary */}
       <section className="seo-content" id="how-it-works" data-section="how-it-works" aria-labelledby="how-works-title">
         <div className="seo-content__inner">
           <Reveal>
             <div className="seo-content__section">
-              <Headline as="h2" id="how-works-title" size="md">How NightLight works</Headline>
+              <Eyebrow>How it works</Eyebrow>
+              <Headline as="h2" id="how-works-title" size="lg">Install. Open. Discover. Play.</Headline>
               <Body>
-                NightLight is designed to be immediately understandable. Here's the complete flow from opening the page to listening to music:
+                NightLight gets out of your way. Install the app, open it, and the home screen
+                greets you with context — recently played, recommendations for the moment,
+                trending tracks, and your playlists.
               </Body>
             </div>
           </Reveal>
@@ -174,26 +177,32 @@ export default function Homepage() {
             <div className="seo-content__section">
               <ol className="how-it-works__steps" style={{ textAlign: 'left', maxWidth: '720px', margin: '0 auto', paddingLeft: '24px' }}>
                 <li style={{ marginBottom: '24px', paddingLeft: '16px' }}>
-                  <Headline as="h3" size="md" style={{ marginBottom: '8px' }}>1. Open NightLight</Headline>
-                  <Body>Visit nightlightmusic.vercel.app in any modern browser. The player loads instantly — no installation, no sign-up screen, no permissions dialog.</Body>
+                  <Headline as="h3" size="md" style={{ marginBottom: '8px' }}>1. Install NightLight</Headline>
+                  <Body>Download the Android app and install it on your phone. NightLight runs on Android 8.0 and above.</Body>
                 </li>
                 <li style={{ marginBottom: '24px', paddingLeft: '16px' }}>
-                  <Headline as="h3" size="md" style={{ marginBottom: '8px' }}>2. Search or browse for music</Headline>
-                  <Body>Use the search bar to find tracks by title, artist, or lyrics. NightLight understands intent — search "Ed Sheeran Perfect" and the original version ranks first. Add "acoustic" and the acoustic variant moves to the top.</Body>
+                  <Headline as="h3" size="md" style={{ marginBottom: '8px' }}>2. Open the app</Headline>
+                  <Body>The home screen shows sections built around you: Recently Played, For You, Trending, your Playlists, and your Favorites.</Body>
                 </li>
                 <li style={{ marginBottom: '24px', paddingLeft: '16px' }}>
-                  <Headline as="h3" size="md" style={{ marginBottom: '8px' }}>3. Choose content</Headline>
-                  <Body>Click any track to start playback immediately. The interface responds instantly — artwork loads, lyrics sync, and the queue builds automatically.</Body>
+                  <Headline as="h3" size="md" style={{ marginBottom: '8px' }}>3. Discover music</Headline>
+                  <Body>Explore trending tracks, contextual recommendations that shift with time and weather, or search for anything by title or artist.</Body>
                 </li>
                 <li style={{ marginBottom: '24px', paddingLeft: '16px' }}>
-                  <Headline as="h3" size="md" style={{ marginBottom: '8px' }}>4. Control playback</Headline>
-                  <Body>Standard controls: play/pause, next/previous, seek, volume, repeat, shuffle. Keyboard shortcuts supported (Space = play/pause, Arrow keys = seek, etc.).</Body>
+                  <Headline as="h3" size="md" style={{ marginBottom: '8px' }}>4. Play a track</Headline>
+                  <Body>The now-playing screen brings artwork, the queue, and controls together. Toggle mood-aware shuffle, repeat modes, and view synced lyrics.</Body>
                 </li>
                 <li style={{ marginBottom: '24px', paddingLeft: '16px' }}>
-                  <Headline as="h3" size="md" style={{ marginBottom: '8px' }}>5. Use player features</Headline>
-                  <Body>Switch between three visual modes (Low Power, Ambient, Animation). Enable time-synced lyrics. Choose from three shuffle modes. Import playlists from other services. Start a shared listening session with a link.</Body>
+                  <Headline as="h3" size="md" style={{ marginBottom: '8px' }}>5. Keep listening</Headline>
+                  <Body>Background playback keeps the music going when you leave the app. Favorite tracks, build playlists, and join Listen Together sessions.</Body>
                 </li>
               </ol>
+            </div>
+          </Reveal>
+
+          <Reveal delay={200}>
+            <div className="seo-content__section" style={{ textAlign: 'center', marginTop: 'clamp(32px, 5vh, 56px)' }}>
+              <SecondaryButton href="/how-it-works">Read the full guide →</SecondaryButton>
             </div>
           </Reveal>
         </div>
@@ -204,8 +213,8 @@ export default function Homepage() {
         <div className="features__inner" style={{ maxWidth: '1280px', margin: '0 auto', padding: 'clamp(96px, 14vh, 180px) clamp(20px, 5vw, 72px)' }}>
           <Reveal>
             <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto' }}>
-              <Eyebrow>Core features</Eyebrow>
-              <Headline as="h2" id="features-title" size="lg">Built for how you actually listen.</Headline>
+              <Eyebrow>Built for real listening moments</Eyebrow>
+              <Headline as="h2" id="features-title" size="lg">The player adapts to the moment.</Headline>
               <Body className="features__body" style={{ marginTop: '22px' }}>
                 Every feature exists because it improves the listening experience. No feature checkboxes, no bloat.
               </Body>
@@ -215,10 +224,10 @@ export default function Homepage() {
           <Reveal delay={150}>
             <div className="features__grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(24px, 3vw, 40px)', marginTop: 'clamp(48px, 8vh, 80px)' }}>
               {FEATURES.map((feature, index) => (
-                <article key={feature.id} className="feature-card" style={{ 
-                  padding: '28px', 
-                  borderRadius: '16px', 
-                  border: '1px solid rgba(216, 181, 106, 0.14)', 
+                <article key={feature.id} className="feature-card" style={{
+                  padding: '28px',
+                  borderRadius: '16px',
+                  border: '1px solid rgba(216, 181, 106, 0.14)',
                   background: 'rgba(8, 11, 16, 0.5)',
                   transition: 'border-color 220ms cubic-bezier(0.22, 1, 0.36, 1), background 220ms cubic-bezier(0.22, 1, 0.36, 1)',
                   animationDelay: `${index * 80}ms`,
@@ -234,45 +243,112 @@ export default function Homepage() {
         </div>
       </section>
 
-      {/* INLINE AD - After features, before why browser-based */}
+      {/* INLINE AD - After features */}
       <InlineAdSlot slotName="homepage-after-features" />
 
-      {/* WHY BROWSER-BASED */}
-      <section className="seo-content" id="why-browser" data-section="why-browser" aria-labelledby="why-browser-title">
+      {/* DOSSIER OF ACTUAL APP FEATURES */}
+      <section className="seo-content" id="dossier" data-section="dossier" aria-labelledby="dossier-title">
         <div className="seo-content__inner">
           <Reveal>
-            <div className="seo-content__section">
-              <Headline as="h2" id="why-browser-title" size="md">Why a browser-based music player?</Headline>
+            <div className="seo-content__section" style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto' }}>
+              <Eyebrow>The listening experience</Eyebrow>
+              <Headline as="h2" id="dossier-title" size="lg">Designed for the night — and every mood in it.</Headline>
               <Body>
-                The web browser is the most universal software platform in existence. It runs on every device, updates automatically, requires no installation, and respects user privacy by default. NightLight embraces this platform rather than fighting it.
+                NightLight connects music with the moment. Here is how each part of the
+                experience works.
               </Body>
             </div>
           </Reveal>
 
           <Reveal delay={100}>
+            <div className="seo-content__section" style={{ marginTop: 'clamp(48px, 8vh, 96px)' }}>
+              <Headline as="h3" size="lg">Mood-aware shuffle</Headline>
+              <Body>
+                NightLight's shuffle isn't random — it's smart. The shuffle engine scores every
+                track against your listening context: your mood, the time of day, how recently
+                you played a song, and how much you've heard it. The result is a queue that
+                flows with the moment instead of jumping between every genre you've ever
+                touched.
+              </Body>
+              <Body>
+                Toggle between three modes: Off (sequential), normal shuffle, and Smart —
+                the context-aware mode that makes NightLight feel like it's listening with you.
+              </Body>
+            </div>
+          </Reveal>
+
+          <Reveal delay={150}>
             <div className="seo-content__section">
-              <ul className="seo-content__features">
-                <li>
-                  <Headline as="h3" size="md">Zero friction</Headline>
-                  <Body>Send a link, it plays. No "download the app" step. No "create an account" wall. The music starts in seconds.</Body>
-                </li>
-                <li>
-                  <Headline as="h3" size="md">Universal compatibility</Headline>
-                  <Body>Works on Windows, macOS, Linux, Chrome OS, iOS, Android — anything with a modern browser. Even older devices benefit from the lightweight Low Power mode.</Body>
-                </li>
-                <li>
-                  <Headline as="h3" size="md">Privacy by default</Headline>
-                  <Body>No background processes, no telemetry, no account tracking. Your listening stays in your browser session.</Body>
-                </li>
-                <li>
-                  <Headline as="h3" size="md">Always current</Headline>
-                  <Body>No app updates to manage. You always have the latest version the moment you open the page.</Body>
-                </li>
-                <li>
-                  <Headline as="h3" size="md">Shareable by nature</Headline>
-                  <Body>A NightLight session is just a URL. Shared listening works because the web is natively linkable.</Body>
-                </li>
-              </ul>
+              <Headline as="h3" size="lg">Contextual discovery</Headline>
+              <Body>
+                A dedicated context engine reads the environment — time of day, weather, and
+                your mood signals — and surfaces music that fits. A rainy night leans toward
+                soft, slowed-down tracks. A late-night focus session drifts toward instrumentals.
+                Monday morning energy gets something with drive.
+              </Body>
+              <Body>
+                The home screen reflects this: "For You" recommendations change as your day
+                changes, and every play keeps the freshness tuned.
+              </Body>
+            </div>
+          </Reveal>
+
+          <Reveal delay={200}>
+            <div className="seo-content__section">
+              <Headline as="h3" size="lg">Trending tracks</Headline>
+              <Body>
+                A dedicated trending section surfaces what's moving right now. Explore what's
+                being listened to across the catalog and jump straight into the tracks other
+                listeners are discovering.
+              </Body>
+            </div>
+          </Reveal>
+
+          <Reveal delay={250}>
+            <div className="seo-content__section">
+              <Headline as="h3" size="lg">Time and weather context</Headline>
+              <Body>
+                NightLight reads the time of day — from early morning to after midnight — and
+                maps weather conditions like rain, snow, fog, or clear skies into listening
+                hints. A rainy evening might surface "Rainy night — soft songs." Your context
+                becomes the recommendation engine.
+              </Body>
+            </div>
+          </Reveal>
+
+          <Reveal delay={300}>
+            <div className="seo-content__section">
+              <Headline as="h3" size="lg">The modern player</Headline>
+              <Body>
+                The now-playing screen is where NightLight shines: a spinning vinyl disc for
+                the artwork, backdrop lighting that follows the album, a draggable queue,
+                playback controls where your thumb already is, and three shuffle modes plus
+                three repeat modes.
+              </Body>
+            </div>
+          </Reveal>
+
+          <Reveal delay={350}>
+            <div className="seo-content__section">
+              <Headline as="h3" size="lg">Playlists and favorites</Headline>
+              <Body>
+                Build playlists, save favorites with one tap, and pull them from the home screen.
+                NightLight treats your library as a first-class part of listening — not an
+                afterthought.
+              </Body>
+            </div>
+          </Reveal>
+
+          <Reveal delay={400}>
+            <div className="seo-content__section">
+              <Headline as="h3" size="lg">Lyrics and background playback</Headline>
+              <Body>
+                When lyrics are available, they arrive in a dedicated, time-synced view —
+                one line at a time, highlighted as the song moves. And playback never stops
+                when you leave the app: NightLight runs as a proper Android background media
+                service, so the music keeps going through screen locks, app switches, and
+                longer drives.
+              </Body>
             </div>
           </Reveal>
         </div>
@@ -289,16 +365,26 @@ export default function Homepage() {
               like something.
             </Headline>
             <Body className="rx__body">
-              Not a dashboard. Not a file browser. A room where your music lives — artwork that breathes, lyrics that arrive with the line, light that follows the sound.
+              Not a dashboard. Not a file browser. A room where your music lives —
+              artwork that breathes, lyrics that arrive with the line, light that
+              follows the sound.
             </Body>
 
             <div className="rx__captions" aria-hidden="false">
-              <p className="rx__caption" style={{ '--at': 0.22 } as React.CSSProperties}>Artwork first — the album sets the light.</p>
-              <p className="rx__caption" style={{ '--at': 0.42 } as React.CSSProperties}>Controls where your thumb already is.</p>
-              <p className="rx__caption" style={{ '--at': 0.62 } as React.CSSProperties}>Lyrics, one line at a time.</p>
+              <p className="rx__caption" style={{ '--at': 0.22 } as React.CSSProperties}>
+                Artwork first — the album sets the light.
+              </p>
+              <p className="rx__caption" style={{ '--at': 0.42 } as React.CSSProperties}>
+                Controls where your thumb already is.
+              </p>
+              <p className="rx__caption" style={{ '--at': 0.62 } as React.CSSProperties}>
+                Lyrics, one line at a time.
+              </p>
             </div>
 
-            <Micro className="rx__micro">Interactive prototype — try the controls.</Micro>
+            <Micro className="rx__micro">
+              Interactive preview of the player experience.
+            </Micro>
           </div>
 
           <div className="rx__device">
@@ -310,14 +396,18 @@ export default function Homepage() {
         </div>
       </section>
 
-      {/* GETTING STARTED */}
-      <section className="seo-content" id="getting-started" data-section="getting-started" aria-labelledby="getting-started-title">
+      {/* WHY NIGHTLIGHT */}
+      <section className="seo-content" id="why-nightlight" data-section="why-nightlight" aria-labelledby="why-title">
         <div className="seo-content__inner">
           <Reveal>
             <div className="seo-content__section">
-              <Headline as="h2" id="getting-started-title" size="md">Getting started with NightLight</Headline>
+              <Eyebrow>Why NightLight</Eyebrow>
+              <Headline as="h2" id="why-title" size="lg">Made for the moments music actually lives in.</Headline>
               <Body>
-                You're already here. NightLight works immediately — but here are a few things worth knowing to get the most out of it:
+                NightLight is designed around the moment you are in. Late nights, quiet
+                evenings, focused work, commutes, late drives, and casual discovery — the
+                player shapes itself to the listening context rather than forcing you into
+                one.
               </Body>
             </div>
           </Reveal>
@@ -326,32 +416,18 @@ export default function Homepage() {
             <div className="seo-content__section">
               <ul className="seo-content__features">
                 <li>
-                  <Headline as="h3" size="md">Keyboard shortcuts</Headline>
-                  <Body>Space = play/pause. Arrow Left/Right = seek ±10s. Arrow Up/Down = volume. M = mute. S = shuffle mode cycle. L = lyrics toggle. Q = queue toggle.</Body>
+                  <Headline as="h3" size="md">Most players help you search.</Headline>
+                  <Body>NightLight goes further into context and discovery. The experience connects music with mood, moment, time, weather, and listening behavior.</Body>
                 </li>
                 <li>
-                  <Headline as="h3" size="md">Visual modes</Headline>
-                  <Body>Press V (or use the mode toggle) to cycle: Low Power → Ambient → Animation. Low Power extends battery life on laptops and phones. Animation is the full immersive experience.</Body>
+                  <Headline as="h3" size="md">A player that listens with you</Headline>
+                  <Body>The context engine means the app understands your listening situation and responds with music that fits — not just a queue of everything.</Body>
                 </li>
                 <li>
-                  <Headline as="h3" size="md">Shuffle modes</Headline>
-                  <Body>Cycle through Off (sequential), Smart (context-aware), and Random (true shuffle). Each serves a different listening intention.</Body>
-                </li>
-                <li>
-                  <Headline as="h3" size="md">Lyrics</Headline>
-                  <Body>When available, lyrics sync automatically. Press L to toggle the lyrics view — words appear line by line, following the song.</Body>
-                </li>
-                <li>
-                  <Headline as="h3" size="md">Playlist import</Headline>
-                  <Body>Paste a Spotify, Apple Music, or YouTube Music playlist URL. NightLight matches available tracks to your library.</Body>
+                  <Headline as="h3" size="md">Beautiful, focused, and free</Headline>
+                  <Body>NightLight keeps the interface clean and the playback first-class. It's free to use and open source, with the code public on GitHub.</Body>
                 </li>
               </ul>
-            </div>
-          </Reveal>
-
-          <Reveal delay={200}>
-            <div className="seo-content__section" style={{ textAlign: 'center', marginTop: 'clamp(32px, 5vh, 56px)' }}>
-              <DownloadButton>Download NightLight</DownloadButton>
             </div>
           </Reveal>
         </div>
@@ -362,14 +438,15 @@ export default function Homepage() {
         <div className="seo-content__inner">
           <Reveal>
             <div className="seo-content__section">
-              <Headline as="h2" id="faq-preview-title" size="md">Frequently asked questions</Headline>
+              <Eyebrow>FAQ</Eyebrow>
+              <Headline as="h2" id="faq-preview-title" size="lg">Quick answers.</Headline>
               <Body>A quick preview — <a href="/faq" style={{ color: 'var(--c-accent)', textDecoration: 'underline' }}>view the full FAQ</a> for more.</Body>
             </div>
           </Reveal>
 
           <Reveal delay={100}>
             <div className="seo-content__section" style={{ textAlign: 'left', maxWidth: '800px', margin: '0 auto' }}>
-              {FAQ_PREVIEW.map((item, _index) => (
+              {FAQ_PREVIEW.map((item) => (
                 <details key={item.q} className="faq-item" style={{ marginBottom: '16px', padding: '20px', borderRadius: '12px', border: '1px solid rgba(216, 181, 106, 0.14)', background: 'rgba(8, 11, 16, 0.5)' }}>
                   <summary style={{ cursor: 'pointer', listStyle: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <Headline as="h3" size="md" style={{ margin: 0 }}>{item.q}</Headline>
@@ -378,34 +455,6 @@ export default function Homepage() {
                   <Body style={{ marginTop: '12px', maxWidth: 'none' }}>{item.a}</Body>
                 </details>
               ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ABOUT NIGHTLIGHT - Brief */}
-      <section className="seo-content" id="about-brief" data-section="about-brief" aria-labelledby="about-brief-title">
-        <div className="seo-content__inner">
-          <Reveal>
-            <div className="seo-content__section">
-              <Headline as="h2" id="about-brief-title" size="md">About NightLight</Headline>
-              <Body>
-                NightLight is an independent project built by developers who believe music listening should be simple, beautiful, and free from unnecessary complexity. It's not backed by a major label, a streaming giant, or a venture fund — it's a product built for listeners, by listeners.
-              </Body>
-            </div>
-          </Reveal>
-
-          <Reveal delay={100}>
-            <div className="seo-content__section">
-              <Body>
-                The project focuses on three things: a player that feels like a dedicated listening room, intelligence that's invisible rather than intrusive, and a web-first architecture that respects the platform's strengths. NightLight runs on React 19 with TypeScript, uses modern browser APIs for media playback, and is deployed on Vercel's edge network for fast global access.
-              </Body>
-            </div>
-          </Reveal>
-
-          <Reveal delay={200}>
-            <div className="seo-content__section" style={{ textAlign: 'center', marginTop: 'clamp(24px, 4vh, 40px)' }}>
-              <SecondaryButton href="/about">Read the full story →</SecondaryButton>
             </div>
           </Reveal>
         </div>
@@ -421,7 +470,7 @@ export default function Homepage() {
           </Headline>
           <Body className="finale__line">Put your headphones on.</Body>
           <div className="finale__cta">
-            <DownloadButton>Download NightLight</DownloadButton>
+            <DownloadButton>Download NightLight for Android</DownloadButton>
           </div>
         </div>
       </section>
@@ -430,88 +479,102 @@ export default function Homepage() {
 }
 
 /**
- * Feature definitions — sourced from actual product functionality in the codebase.
- * Do not add features that don't exist.
+ * Feature definitions — sourced from the actual Android application.
+ * Do not add features that don't exist in the app.
  */
 const FEATURES = [
   {
-    id: 'adaptive-visuals',
+    id: 'mood-shuffle',
+    icon: '🧠',
+    name: 'Mood-Aware Shuffle',
+    description: 'Smart Shuffle scores tracks against your listening context — mood, time of day, recency, and how much you\'ve heard a track. The queue flows with the moment instead of jumping genres.',
+    howToUse: 'Toggle Smart in the player shuffle menu. Cycle between Off, normal, and Smart.',
+  },
+  {
+    id: 'contextual-discovery',
     icon: '🌙',
-    name: 'Adaptive Visual Modes',
-    description: 'Three visual modes — Low Power, Ambient, and Animation — let you choose how immersive the environment feels. Low Power minimizes particles for battery efficiency. Ambient adds slow clouds and light rain. Animation enables full rain depth, cloud movement, and parallax.',
-    howToUse: 'Press V or use the mode toggle to cycle. Settings persist across sessions.',
+    name: 'Contextual Discovery',
+    description: 'A context engine reads the environment — time, weather, mood signals — and surfaces music that fits. Recommendations change as your day changes.',
+    howToUse: 'Check the "For You" section on the home screen. It updates with context.',
   },
   {
-    id: 'three-shuffle',
-    icon: '🔀',
-    name: 'Three Shuffle Modes',
-    description: 'Shuffle isn\'t one thing. Off plays tracks in order. Smart Shuffle uses context — mood, language, history, time of day — to order the queue intelligently. Random Shuffle gives every eligible track an equal turn with a deterministic seed.',
-    howToUse: 'Click the shuffle icon to cycle: Off → Smart → Random. Current mode shows in the player.',
+    id: 'trending',
+    icon: '📈',
+    name: 'Trending Tracks',
+    description: 'A dedicated trending section surfaces what\'s being listened to right now across the catalog. Discover the tracks other listeners are playing.',
+    howToUse: 'Open the Trending section on the home screen and tap any track to play.',
   },
   {
-    id: 'synced-lyrics',
+    id: 'weather-time',
+    icon: '🌧️',
+    name: 'Time + Weather Context',
+    description: 'NightLight maps time of day and weather — rain, snow, fog, sun — into listening hints. A rainy night may surface soft songs; a drive gets more energy.',
+    howToUse: 'Quote bars update automatically. Recommendations follow the forecast.',
+  },
+  {
+    id: 'playlists',
+    icon: '📁',
+    name: 'Playlists',
+    description: 'Full playlist support: create, edit, rename, reorder, and delete playlists. Your library lives on your device and is one tap away.',
+    howToUse: 'Create a playlist from the Library screen, then add tracks from any menu.',
+  },
+  {
+    id: 'favorites',
+    icon: '❤️',
+    name: 'Favorites',
+    description: 'Save tracks you love with a single tap. Favorites live in your library and show up with a count on the home screen.',
+    howToUse: 'Tap the heart on any track or in the player to like it. Find them in your Library.',
+  },
+  {
+    id: 'background-playback',
+    icon: '🎵',
+    name: 'Background Playback',
+    description: 'NightLight runs as a proper Android background media service. Music keeps playing when you lock the screen, switch apps, or leave the phone alone.',
+    howToUse: 'Press play, then lock your screen. Playback continues via your notification.',
+  },
+  {
+    id: 'lyrics',
     icon: '📝',
     name: 'Time-Synced Lyrics',
-    description: 'Lyrics appear line by line, synchronized with playback. The typography-first design means words set like poetry in the darkness — not crammed into a panel. When lyrics are available for a track, they display automatically.',
-    howToUse: 'Press L to toggle lyrics view. Works automatically when lyric data exists for the playing track.',
+    description: 'Lyrics arrive in a dedicated view, line by line, synchronized with playback. The active line highlights as the song moves. Manual scrolling pauses the sync.',
+    howToUse: 'Open the lyrics view from the player. Tap a line to pause auto-scroll.',
   },
   {
-    id: 'smart-search',
+    id: 'search',
     icon: '🔍',
-    name: 'Intent-Aware Search',
-    description: 'Search understands track intent. "Ed Sheeran Perfect" returns the canonical original first. "Ed Sheeran Perfect acoustic" promotes the acoustic variant to the top while keeping other versions accessible. No hijacking, no lost results.',
-    howToUse: 'Type in the search bar. Variants (acoustic, live, remix) are labeled and grouped.',
+    name: 'Smart Search',
+    description: 'Real-time search with debounced results, paginated browsing, and search history stored on your device. Find anything by title or artist.',
+    howToUse: 'Tap the search bar on the home screen and start typing. History supports quick re-searches.',
   },
   {
-    id: 'playlist-import',
-    icon: '📥',
-    name: 'Playlist Import',
-    description: 'Paste a playlist link from Spotify, Apple Music, or YouTube Music. NightLight reads the playlist, matches available tracks to its catalog, and creates a NightLight playlist. Unavailable tracks are noted — no silent failures.',
-    howToUse: 'Open the import flow, paste the URL, confirm. Matched tracks appear in your library.',
-  },
-  {
-    id: 'shared-listening',
+    id: 'listen-together',
     icon: '🔗',
-    name: 'Shared Listening Sessions',
-    description: 'Start a session, share the link, and listen to the same track in perfect sync across devices. A listening chat appears alongside — secondary to the music, part of the session, not a distraction.',
-    howToUse: 'Click Share in the player, copy the link, send it. Guest joins and playback syncs automatically.',
-  },
-  {
-    id: 'language-aware',
-    icon: '🌐',
-    name: 'Language-Aware Recommendations',
-    description: 'Switch between English and Hindi preferences — the suggestions change, but the quality stays the same. NightLight respects what you actually want to hear without forcing a single-language catalog.',
-    howToUse: 'Use the language toggle in settings or the language-aware section. Recommendations update immediately.',
-  },
-  {
-    id: 'keyboard-shortcuts',
-    icon: '⌨️',
-    name: 'Full Keyboard Control',
-    description: 'Every primary action has a keyboard shortcut. Space (play/pause), arrows (seek/volume), M (mute), S (shuffle), L (lyrics), Q (queue), V (visual mode). Designed for desktop power users and accessibility.',
-    howToUse: 'Press ? anywhere in the player to see the full shortcut reference.',
+    name: 'Listen Together',
+    description: 'Start a session, share the code or link, and listen to the same track in sync with friends. Session chat keeps the conversation close.',
+    howToUse: 'Use the share/listen-together action in the player and share the session link.',
   },
 ] as const;
 
 const FAQ_PREVIEW = [
   {
+    q: 'Is NightLight an Android app?',
+    a: 'Yes. NightLight is a modern Android music player. The website you\'re on is the landing page — the product is the Android app you install on your phone.',
+  },
+  {
     q: 'Is NightLight free?',
-    a: 'Yes. NightLight is completely free to use. No subscription, no premium tier, no hidden costs.',
+    a: 'Yes. NightLight is completely free to use — no subscription, no premium tier, no hidden costs. The project is open source under the MIT license.',
   },
   {
-    q: 'Do I need to create an account?',
-    a: 'No. NightLight works immediately without any account. Optional account features (sync, history) may be added later but the core player will always work without one.',
+    q: 'Does NightLight support background playback?',
+    a: 'Yes. NightLight runs as an Android background media service, so music keeps playing when you lock your screen or switch apps.',
   },
   {
-    q: 'Where does the music come from?',
-    a: 'NightLight is a player, not a music service. It plays audio from sources you provide or that are available via supported integrations. The demo shows placeholder tracks with procedural artwork — the prototype runs without audio.',
+    q: 'Does NightLight have lyrics?',
+    a: 'Yes. When lyrics are available for a track, they appear in a dedicated, time-synced view — line by line, with the active line highlighted.',
   },
   {
-    q: 'Can I import my Spotify playlists?',
-    a: 'Yes. Paste a Spotify playlist URL (or Apple Music / YouTube Music) and NightLight will match available tracks to create a NightLight playlist.',
-  },
-  {
-    q: 'Does NightLight work on mobile?',
-    a: 'Yes. NightLight is fully responsive and works in mobile browsers. The Low Power visual mode is especially useful for battery life on phones.',
+    q: 'How does mood-aware shuffle work?',
+    a: 'Smart shuffle scores every track against your listening context — mood, time of day, recency, and listening history — to build a queue that flows with the moment.',
   },
 ] as const;
 

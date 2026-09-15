@@ -2,12 +2,14 @@
 
 ### Music after dark.
 
-A music experience built around the part that matters most — the music.
+The landing page for **NightLight — the Android music player**.
+
+A modern Android music player built around how you actually listen: mood-aware shuffle, contextual discovery, trending tracks, playlists, favorites, lyrics, and background playback.
 
 <br />
 
-[![Open NightLight](https://img.shields.io/badge/▶%20Open%20NightLight-8B5CF6?style=for-the-badge&logoColor=white)](https://nightlightmusic.vercel.app/)
-[![GitHub](https://img.shields.io/badge/GitHub-18181B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Sagar264offici/NightLight-Landing-Page)
+[![NightLight Website](https://img.shields.io/badge/🌙%20NightLight%20Website-8B5CF6?style=for-the-badge&logoColor=white)](https://nightlightmusic.vercel.app/)
+[![Android App](https://img.shields.io/badge/GitHub-App-18181B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Sagar264offici/NightLight)
 
 <br /><br />
 
@@ -19,13 +21,11 @@ A music experience built around the part that matters most — the music.
 
 ## 🎧 What is NightLight?
 
-NightLight is a music-focused web experience designed to make discovering and listening to music feel natural.
+NightLight is a **modern Android music player**. It pairs a focused, beautiful playback experience with contextual intelligence — the music adapts to the moment: the time of day, the weather outside, your mood, and your listening history.
 
-No giant wall of controls. No endless explanation.
+**The product is the Android app. The website is its landing page.**
 
-Just search, discover something you like, and press play.
-
-The landing page is built as one continuous visual story, moving from the player into discovery, search, personalization, shuffle, lyrics, playlists, sharing, and the final download call-to-action.
+The landing page is built as one continuous visual story: hero, what NightLight is, mood-aware shuffle, contextual discovery, trending tracks, time + weather context, the player, playlists + favorites, lyrics + background playback, why NightLight, and the download call-to-action.
 
 ---
 
@@ -33,16 +33,16 @@ The landing page is built as one continuous visual story, moving from the player
 
 | | |
 |---|---|
-| 🎵 **Player experience** | A focused music-player interface with artwork, playback controls and motion. |
-| 🌌 **Atmosphere** | Multiple visual listening moods designed around the feeling of music after dark. |
-| 🔎 **Smart search** | Search demonstrations that distinguish the requested track from variants such as acoustic, live and remix versions. |
-| 🧠 **Smart listening** | Context-aware ideas built around situations such as late nights, focus, drives and wind-down sessions. |
-| 🗣️ **Language-aware discovery** | Music recommendations demonstrated across English and Hindi catalogs. |
-| 🔀 **Shuffle modes** | Different ways to let NightLight decide what comes next. |
-| 📝 **Lyrics** | A cinematic lyrics experience built into the product story. |
-| 📂 **Playlist import** | Playlist-focused flows for bringing music into the experience. |
-| 🤝 **Share & listen together** | Share music and explore social listening concepts. |
-| 💬 **Music chat** | A conversational layer around discovering and listening to music. |
+| 🎵 **Player experience** | A modern now-playing screen with artwork, vinyl animation, controls and motion. |
+| 🌙 **Mood-aware shuffle** | Smart shuffle that scores tracks against mood, time, and listening history. |
+| 🔍 **Contextual discovery** | Recommendations driven by time-of-day, weather, and mood signals. |
+| 📈 **Trending tracks** | What's being listened to right now across the catalog. |
+| 🌧️ **Time + weather context** | Dynamic recommendation headlines like "Rainy night — soft songs." |
+| 📁 **Playlists** | Create, rename, reorder, and delete playlists. |
+| ❤️ **Favorites** | Save tracks with one tap. |
+| 🎧 **Background playback** | Proper Android media service — keeps playing through locks and app switches. |
+| 📝 **Lyrics** | Time-synced lyrics with an active-line highlight. |
+| 🔗 **Listen Together** | Real-time collaborative listening sessions. |
 
 ---
 
@@ -74,9 +74,9 @@ The idea is simple: make the page feel like the product instead of a brochure fo
 
 The live landing page is deployed on Vercel.
 
-### [View the source →](https://github.com/Sagar264offici/NightLight-Landing-Page)
+### [View the Android app source →](https://github.com/Sagar264offici/NightLight)
 
-This repository contains the landing page source.
+The NightLight Android application is open source (MIT).
 
 ---
 
@@ -90,7 +90,7 @@ This repository contains the landing page source.
 
 </div>
 
-The project currently uses React 19, React DOM, TypeScript, Vite and OXLint.
+The landing page uses React 19, React DOM, TypeScript, Vite and OXLint.
 
 ---
 
@@ -149,27 +149,27 @@ NightLight-Landing-Page/
 ```text
 Hero
   ↓
-Player
+What NightLight is
   ↓
-Atmosphere
+Mood-aware shuffle
   ↓
-Discovery
+Contextual discovery
   ↓
-Search
+Trending
   ↓
-Smart experience
+Time + weather context
   ↓
-Language discovery
+The player
   ↓
-Shuffle
+Playlists + favorites
   ↓
-Lyrics
+Lyrics + background playback
   ↓
-Playlists & import
+Why NightLight
   ↓
-Share & listen together
+FAQ
   ↓
-Final CTA
+Final download CTA
 ```
 
 It is deliberately presented as one continuous composition instead of a collection of unrelated marketing sections.
@@ -180,11 +180,11 @@ It is deliberately presented as one continuous composition instead of a collecti
 
 NightLight keeps launch-specific values in a central configuration file rather than scattering them throughout the codebase.
 
-That configuration covers the app name, tagline, download destination, site URL, social/metadata fields, navigation and demo music data.
+The most important value is the download destination:
 
-The public landing page is already live:
+- `src/config/site.ts` → `DOWNLOAD_URL` — change **one** value and every CTA updates.
 
-**https://nightlightmusic.vercel.app/**
+Currently set to a placeholder (`REPLACE_WITH_DOWNLOAD_LINK`) until an official distribution destination (Play Store / APK) is configured. The CTA shows an honest "coming soon" state rather than a fake link.
 
 ---
 
@@ -194,7 +194,7 @@ I wanted a music landing page that felt closer to opening a music app than readi
 
 So NightLight is intentionally visual, animated and a little atmospheric.
 
-The page is there to make you want to press play.
+The page is there to make you want to press play — and install the app.
 
 ---
 
@@ -214,7 +214,7 @@ A GitHub star is always appreciated.
 
 **Music after dark.**
 
-[Website](https://nightlightmusic.vercel.app/) · [GitHub](https://github.com/Sagar264offici/NightLight-Landing-Page)
+[Website](https://nightlightmusic.vercel.app/) · [Android App](https://github.com/Sagar264offici/NightLight) · [Landing Source](https://github.com/Sagar264offici/NightLight-Landing-Page)
 
 <br />
 

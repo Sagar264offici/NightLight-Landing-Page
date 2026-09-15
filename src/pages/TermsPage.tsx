@@ -1,8 +1,7 @@
 /**
- * TERMS OF SERVICE (§22)
- * -----------------------
- * Accurate terms describing actual service.
- * No copied templates — only what applies to NightLight.
+ * TERMS OF SERVICE
+ * -----------------
+ * Accurate terms describing the actual Android application.
  */
 
 import { Eyebrow, Headline, Body, Micro } from '../ui/typography';
@@ -16,7 +15,7 @@ export default function TermsPage() {
     description: 'Terms of service for using NightLight.',
   };
 
-  const lastUpdated = 'September 12, 2026';
+  const lastUpdated = 'September 15, 2026';
 
   return (
     <>
@@ -52,7 +51,7 @@ export default function TermsPage() {
           <Reveal>
             <Headline as="h2" id="description-title" size="md">What NightLight is</Headline>
             <Body style={{ marginTop: '16px' }}>
-              NightLight is a free, browser-based music player application. It provides a user interface for playing audio, displaying artwork, showing lyrics, managing playback queues, and related features. NightLight is not a music streaming service, does not host a music catalog, and does not license or distribute music.
+              NightLight is a free, open source Android music player application. It provides a user interface for searching and playing audio, displaying artwork, showing synced lyrics, managing playlists and favorites, and background playback. NightLight is a player and discovery tool — it does not itself license or distribute a music catalog.
             </Body>
           </Reveal>
         </article>
@@ -61,7 +60,16 @@ export default function TermsPage() {
           <Reveal>
             <Headline as="h2" id="no-account-title" size="md">No account required</Headline>
             <Body style={{ marginTop: '16px' }}>
-              NightLight does not require account creation. All core functionality works without registration. If optional account features are added in the future, they will be clearly separate from the core player and governed by additional terms.
+              NightLight does not require account creation. All core functionality works without registration. Optional Google Sign-In is available for convenience but is not required for playback or discovery.
+            </Body>
+          </Reveal>
+        </article>
+
+        <article className="policy-section" aria-labelledby="license-title" style={{ marginTop: '48px' }}>
+          <Reveal>
+            <Headline as="h2" id="license-title" size="md">Open source license</Headline>
+            <Body style={{ marginTop: '16px' }}>
+              The NightLight source code is made available under the MIT License. You may use, copy, modify, and redistribute the code in accordance with the license text in the repository.
             </Body>
           </Reveal>
         </article>
@@ -70,13 +78,10 @@ export default function TermsPage() {
           <Reveal>
             <Headline as="h2" id="content-title" size="md">Content and intellectual property</Headline>
             <Body style={{ marginTop: '16px' }}>
-              <strong>NightLight content:</strong> The NightLight application code, design, branding, and original text content are proprietary to the NightLight project. You may not copy, reproduce, or redistribute the NightLight application itself without permission.
-            </Body>
-            <Body style={{ marginTop: '16px' }}>
               <strong>Third-party content:</strong> Music, artwork, lyrics, metadata, and other content played or displayed through NightLight belong to their respective rights holders. NightLight makes no claim of ownership over this content. Your use of third-party content is subject to the terms of the respective rights holders and applicable law.
             </Body>
             <Body style={{ marginTop: '16px' }}>
-              <strong>Playlist import:</strong> When you import a playlist from a third-party service (Spotify, Apple Music, YouTube Music), you are responsible for ensuring you have the right to access that playlist data. NightLight reads publicly available playlist metadata only; it does not circumvent access controls or authentication.
+              <strong>Playlist import:</strong> When you import a playlist from a third-party service (e.g., Spotify, YouTube), you are responsible for ensuring you have the right to access that playlist data. NightLight reads publicly available playlist metadata only.
             </Body>
           </Reveal>
         </article>
@@ -89,10 +94,8 @@ export default function TermsPage() {
             </Body>
             <ul style={{ marginTop: '16px', paddingLeft: '24px', lineHeight: '1.9' }}>
               <li>Use NightLight for any illegal purpose or in violation of any law.</li>
-              <li>Attempt to reverse engineer, decompile, or extract the source code of the NightLight application beyond what is publicly available in the browser.</li>
+              <li>Use Listen Together sessions for harassment, spam, or any abusive purpose.</li>
               <li>Interfere with or disrupt the Service, servers, or networks connected to the Service.</li>
-              <li>Use automated systems (bots, scrapers, crawlers) to access the Service in a manner that exceeds reasonable human usage.</li>
-              <li>Use shared listening sessions for harassment, spam, or any abusive purpose.</li>
             </ul>
           </Reveal>
         </article>
@@ -115,20 +118,11 @@ export default function TermsPage() {
           </Reveal>
         </article>
 
-        <article className="policy-section" aria-labelledby="indemnification-title" style={{ marginTop: '48px' }}>
-          <Reveal>
-            <Headline as="h2" id="indemnification-title" size="md">Indemnification</Headline>
-            <Body style={{ marginTop: '16px' }}>
-              You agree to indemnify and hold harmless the NightLight project and its maintainers from any claims, damages, losses, or expenses (including reasonable attorneys' fees) arising from your use of the Service in violation of these Terms or applicable law.
-            </Body>
-          </Reveal>
-        </article>
-
         <article className="policy-section" aria-labelledby="third-party-links-title" style={{ marginTop: '48px' }}>
           <Reveal>
-            <Headline as="h2" id="third-party-links-title" size="md">Third-party links and services</Headline>
+            <Headline as="h2" id="third-party-links-title" size="md">Third-party services</Headline>
             <Body style={{ marginTop: '16px' }}>
-              NightLight may contain links to third-party websites or services (e.g., Spotify, Apple Music, YouTube Music for playlist import). We do not control these services and are not responsible for their content, privacy practices, or terms. Your use of third-party services is at your own risk.
+              The NightLight app integrates with third-party services for music search/streaming, lyrics, playlist import, and optional Google Sign-In. We do not control these services and are not responsible for their content, privacy practices, or terms.
             </Body>
           </Reveal>
         </article>
@@ -138,15 +132,6 @@ export default function TermsPage() {
             <Headline as="h2" id="changes-title" size="md">Changes to the Service and terms</Headline>
             <Body style={{ marginTop: '16px' }}>
               We may modify or discontinue the Service (or any part) at any time without notice. We may update these Terms; material changes will be posted with a new "Last updated" date. Continued use after changes constitutes acceptance.
-            </Body>
-          </Reveal>
-        </article>
-
-        <article className="policy-section" aria-labelledby="governing-law-title" style={{ marginTop: '48px' }}>
-          <Reveal>
-            <Headline as="h2" id="governing-law-title" size="md">Governing law</Headline>
-            <Body style={{ marginTop: '16px' }}>
-              These Terms are governed by the laws of the jurisdiction where the NightLight project is maintained, without regard to conflict of law principles. Disputes will be resolved in the courts of that jurisdiction.
             </Body>
           </Reveal>
         </article>

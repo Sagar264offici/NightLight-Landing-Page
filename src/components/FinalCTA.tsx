@@ -1,6 +1,5 @@
 /**
- * FINAL CTA (§33, §36) — quiet again. Deepest black, very light rain,
- * huge negative space. Emotional, not salesy.
+ * FINAL CTA — deepest black, huge negative space. Emotional, not salesy.
  */
 import { DownloadButton } from '../ui/DownloadButton'
 import Reveal from '../ui/Reveal'
@@ -17,7 +16,7 @@ export default function FinalCTA() {
         </Headline>
         <Body className="finale__line">Put your headphones on.</Body>
         <div className="finale__cta">
-          <DownloadButton>Download NightLight</DownloadButton>
+          <DownloadButton>Download NightLight for Android</DownloadButton>
         </div>
       </Reveal>
     </section>
