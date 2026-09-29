@@ -22,7 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-SongsTumb/*.dmg
 
 # Raw uploaded brand source (icons are built from it and committed)
 nightlight_music_logo.png

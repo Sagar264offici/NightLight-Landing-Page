@@ -25,43 +25,37 @@ import { InlineAdSlot } from '../components/AdSlot';
 import { SITE_URL, REPO_URL } from '../config/site';
 
 export default function Homepage() {
-  const structuredData = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
-      name: 'NightLight',
-      applicationCategory: 'MultimediaApplication',
-      operatingSystem: 'Android',
-      url: SITE_URL,
-      description:
-        'NightLight is a modern Android music player built around contextual discovery, mood-aware shuffle, trending music, playlists, favorites, synced lyrics, and background playback.',
-      offers: {
-        '@type': 'Offer',
-        price: '0',
-        priceCurrency: 'USD',
-      },
-      featureList: [
-        'Mood-aware smart shuffle',
-        'Contextual music discovery',
-        'Trending tracks',
-        'Weather and time-aware recommendations',
-        'Playlists',
-        'Favorites',
-        'Background playback',
-        'Time-synced lyrics',
-        'Listen Together sessions',
-      ],
-      sameAs: [REPO_URL],
+  // WebSite + Organization are emitted sitewide by config/seo.ts, so only the
+  // page-specific schema belongs here — declaring it twice confuses Google.
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'NightLight',
+    applicationCategory: 'MultimediaApplication',
+    applicationSubCategory: 'Music Player',
+    operatingSystem: 'Android',
+    url: SITE_URL,
+    inLanguage: 'en',
+    description:
+      'NightLight is a modern Android music player built around contextual discovery, mood-aware shuffle, trending music, playlists, favorites, synced lyrics, and background playback.',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
     },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'WebSite',
-      name: 'NightLight',
-      url: SITE_URL,
-      description:
-        'NightLight is a modern Android music player with mood-aware shuffle, contextual discovery, trending music, playlists, favorites, lyrics, and background playback.',
-    },
-  ];
+    featureList: [
+      'Mood-aware smart shuffle',
+      'Contextual music discovery',
+      'Trending tracks',
+      'Weather and time-aware recommendations',
+      'Playlists',
+      'Favorites',
+      'Background playback',
+      'Time-synced lyrics',
+      'Listen Together sessions',
+    ],
+    sameAs: [REPO_URL],
+  };
 
   return (
     <>

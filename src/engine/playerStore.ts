@@ -4,7 +4,7 @@
  * the progress clock is a simulated transport, and the UI copy never implies sound.
  * Tiny pub/sub so only subscribed components re-render.
  */
-import { TRACKS_MUTABLE as TRACKS } from '../config/site'
+import { TRACKS } from '../config/site'
 
 export interface PlayerState {
   index: number

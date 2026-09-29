@@ -38,11 +38,21 @@ function getGrainTile(): string {
   return grainTile ?? ''
 }
 
+
 export default function Atmosphere() {
   const rainRef = useRef<HTMLCanvasElement>(null)
   const cloudRef = useRef<HTMLCanvasElement>(null)
   const stormRef = useRef<HTMLCanvasElement>(null)
   const rootRef = useRef<HTMLDivElement>(null)
+  const grainRef = useRef<HTMLDivElement>(null)
+
+  // Written straight to the DOM rather than through state: the tile is random
+  // noise, so holding it in state would re-render the whole atmosphere for one
+  // decorative background image — and rendering it on the server would produce
+  // markup the client could never match.
+  useEffect(() => {
+    if (grainRef.current) grainRef.current.style.backgroundImage = `url(${getGrainTile()})`
+  }, [])
 
   useEffect(() => {
     const tier = detectQuality()
@@ -106,7 +116,7 @@ export default function Atmosphere() {
       {/* L09b — lightning / storm flash */}
       <canvas className="storm" ref={stormRef} aria-hidden="true" />
       {/* L10 — film grain */}
-      <div className="grain" style={{ backgroundImage: `url(${getGrainTile()})` }} />
+      <div className="grain" ref={grainRef} />
       {/* L11 — vignette */}
       <div className="vignette" />
     </div>

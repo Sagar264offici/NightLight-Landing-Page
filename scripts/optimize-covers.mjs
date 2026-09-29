@@ -3,14 +3,17 @@
  * Cover-art optimization pipeline (perf brief Phases 1-4/23).
  *
  * For every public/covers/*.png we emit WebP + AVIF derivatives at the widths
- * the art actually renders at (queue thumb ≈56px, gallery/language tile
- * ≈300px, phone now-playing art ≤512px) plus a 2x retina tier. The PNG files
- * are left untouched (kept as the universal fallback), derivatives sit next
- * to them so the existing /covers/*.png paths keep working.
+ * the art actually renders at (queue thumb ≈56px, player now-playing art
+ * ≈300px) plus a 2x retina tier. The PNG files are left untouched (kept as
+ * the universal fallback), derivatives sit next to them so the existing
+ * /covers/*.png paths keep working.
+ *
+ * Derivatives are committed, so this only needs re-running when a source PNG
+ * changes. Add the original artwork to public/covers/ and run `npm run covers`.
  *
  * Derivative naming is explicit, not opaque:  <name>-<width>w.webp / .avif
  */
-import { mkdir, readdir, stat, writeFile } from 'node:fs/promises'
+import { mkdir, readdir, stat } from 'node:fs/promises'
 import { join, basename, extname } from 'node:path'
 
 import sharp from 'sharp'
@@ -69,21 +72,3 @@ console.log(`  WebP set     : ${(totalWebp / 1024).toFixed(2)} MB (${totalWebp} 
 console.log(`  AVIF set     : ${(totalAvif / 1024).toFixed(2)} MB (${totalAvif} KB) — ${(totalAvif / 3).toFixed(0)} KB per tier`)
 console.log(`  WebP vs PNG  : ${((1 - totalWebp / 3 / totalSrc) * 100).toFixed(1)}% smaller (single best tier loaded)`)
 console.log(`  AVIF vs PNG  : ${((1 - totalAvif / 3 / totalSrc) * 100).toFixed(1)}% smaller (single best tier loaded)`)
-
-await writeFile(
-  join(ROOT, 'covers-opt-report.json'),
-  JSON.stringify(
-    {
-      totalPngKb: totalSrc,
-      totalWebpKb: totalWebp,
-      totalAvifKb: totalAvif,
-      perTierWebpKb: Math.round(totalWebp / 3),
-      perTierAvifKb: Math.round(totalAvif / 3),
-      widths: WIDTHS,
-      files: report,
-    },
-    null,
-    2,
-  ),
-)
-console.log('\nWrote covers-opt-report.json')

@@ -5,7 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && vite build --config vite.ssr.config.ts && node scripts/prerender.mjs && node scripts/verify-seo.mjs",
+    "build:seo": "node scripts/prerender.mjs && node scripts/verify-seo.mjs",
+    "check:hydration": "node scripts/check-hydration.mjs",
+    "covers": "node scripts/optimize-covers.mjs",
+    "verify": "npm run lint && npm run build && npm run check:hydration",
     "lint": "oxlint",
     "preview": "vite preview"
   },

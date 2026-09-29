@@ -25,11 +25,11 @@ export default function TermsPage() {
       />
 
       <section className="page-hero" aria-labelledby="terms-title">
-        <div className="page-hero__inner" style={{ maxWidth: '800px', margin: '0 auto', padding: 'clamp(120px, 18vh, 200px) clamp(20px, 5vw, 72px) clamp(80px, 12vh, 120px)', textAlign: 'center' }}>
+        <div className="page-hero__inner">
           <Reveal>
             <Eyebrow>Terms of Service</Eyebrow>
             <Headline as="h1" id="terms-title" size="xl">Simple terms. No surprises.</Headline>
-            <Body className="page-hero__lead" style={{ marginTop: '24px', fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)', maxWidth: 'none' }}>
+            <Body className="page-hero__lead">
               By using NightLight, you agree to these terms.
             </Body>
             <Micro style={{ marginTop: '16px', display: 'block' }}>Last updated: {lastUpdated}</Micro>
@@ -37,7 +37,7 @@ export default function TermsPage() {
         </div>
       </section>
 
-      <main className="page-content" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 clamp(20px, 5vw, 72px) clamp(120px, 16vh, 180px)' }}>
+      <div className="page-content">
         <article className="policy-section" aria-labelledby="acceptance-title">
           <Reveal>
             <Headline as="h2" id="acceptance-title" size="md">Acceptance of terms</Headline>
@@ -144,7 +144,7 @@ export default function TermsPage() {
             </Body>
           </Reveal>
         </article>
-      </main>
+      </div>
     </>
   );
 }

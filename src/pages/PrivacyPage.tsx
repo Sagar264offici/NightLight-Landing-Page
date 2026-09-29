@@ -25,11 +25,11 @@ export default function PrivacyPage() {
       />
 
       <section className="page-hero" aria-labelledby="privacy-title">
-        <div className="page-hero__inner" style={{ maxWidth: '800px', margin: '0 auto', padding: 'clamp(120px, 18vh, 200px) clamp(20px, 5vw, 72px) clamp(80px, 12vh, 120px)', textAlign: 'center' }}>
+        <div className="page-hero__inner">
           <Reveal>
             <Eyebrow>Privacy Policy</Eyebrow>
             <Headline as="h1" id="privacy-title" size="xl">Your privacy. Respected.</Headline>
-            <Body className="page-hero__lead" style={{ marginTop: '24px', fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)', maxWidth: 'none' }}>
+            <Body className="page-hero__lead">
               NightLight collects minimal data. No tracking, no profiling, no surprises.
             </Body>
             <Micro style={{ marginTop: '16px', display: 'block' }}>Last updated: {lastUpdated}</Micro>
@@ -37,7 +37,7 @@ export default function PrivacyPage() {
         </div>
       </section>
 
-      <main className="page-content" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 clamp(20px, 5vw, 72px) clamp(120px, 16vh, 180px)' }}>
+      <div className="page-content">
         <article className="policy-section" aria-labelledby="summary-title">
           <Reveal>
             <Headline as="h2" id="summary-title" size="md">Summary</Headline>
@@ -143,7 +143,7 @@ export default function PrivacyPage() {
             </Body>
           </Reveal>
         </article>
-      </main>
+      </div>
     </>
   );
 }

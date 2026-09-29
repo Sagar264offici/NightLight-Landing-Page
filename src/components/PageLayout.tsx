@@ -1,26 +1,35 @@
 /**
- * PAGE LAYOUT COMPONENT
- * --------------------
- * Base layout for all content pages.
- * Provides consistent structure: Navigation, Main, Footer.
- * Handles SEO metadata via react-helmet-async style pattern.
+ * PAGE LAYOUT
+ * -----------
+ * Chrome for every page: skip link, navigation, <main>, footer.
+ *
+ * The prerendered HTML already carries the correct <head> (see config/seo.ts),
+ * so this component only has to keep the head in sync *after* a client-side
+ * navigation, when no new document is fetched.
  */
-
-import { useEffect } from 'react';
-import Navigation from './Navigation';
-import Footer from './Footer';
-import { SITE_URL } from '../config/site';
+import { useEffect } from 'react'
+import Navigation from './Navigation'
+import Footer from './Footer'
+import { APP_NAME, SITE_URL } from '../config/site'
 
 interface PageLayoutProps {
-  children: React.ReactNode;
-  title: string;
-  description: string;
-  canonical?: string;
-  ogImage?: string;
-  ogType?: 'website' | 'article';
-  structuredData?: object | object[];
-  noIndex?: boolean;
-  noFollow?: boolean;
+  children: React.ReactNode
+  title: string
+  description: string
+  canonical?: string | null
+  ogImage?: string
+  ogType?: 'website' | 'article'
+  noIndex?: boolean
+}
+
+function setMeta(selector: string, attr: 'name' | 'property', key: string, content: string) {
+  let el = document.head.querySelector<HTMLMetaElement>(selector)
+  if (!el) {
+    el = document.createElement('meta')
+    el.setAttribute(attr, key)
+    document.head.appendChild(el)
+  }
+  el.setAttribute('content', content)
 }
 
 export default function PageLayout({
@@ -30,107 +39,67 @@ export default function PageLayout({
   canonical,
   ogImage = `${SITE_URL}/og-image.png`,
   ogType = 'website',
-  structuredData,
   noIndex = false,
-  noFollow = false,
 }: PageLayoutProps) {
-  // Update document title and meta tags
+  const url = canonical ?? `${SITE_URL}/`
+
   useEffect(() => {
-    document.title = title;
+    document.title = title
 
-    // Update or create meta description
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement('meta');
-      metaDesc.setAttribute('name', 'description');
-      document.head.appendChild(metaDesc);
+    setMeta('meta[name="description"]', 'name', 'description', description)
+    setMeta('meta[name="robots"]', 'name', 'robots', noIndex ? 'noindex, follow' : 'index, follow')
+
+    // A noindex page must not claim a canonical, or it points Google at a
+    // different URL and asks that one to be dropped instead.
+    let link = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]')
+    if (noIndex) {
+      link?.remove()
+    } else {
+      if (!link) {
+        link = document.createElement('link')
+        link.setAttribute('rel', 'canonical')
+        document.head.appendChild(link)
+      }
+      link.setAttribute('href', url)
     }
-    metaDesc.setAttribute('content', description);
 
-    // Update canonical
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.setAttribute('href', canonical || `${SITE_URL}${window.location.pathname}`);
-
-    // Update robots
-    let robotsMeta = document.querySelector('meta[name="robots"]');
-    if (!robotsMeta) {
-      robotsMeta = document.createElement('meta');
-      robotsMeta.setAttribute('name', 'robots');
-      document.head.appendChild(robotsMeta);
-    }
-    robotsMeta.setAttribute('content', `${noIndex ? 'noindex' : 'index'}, ${noFollow ? 'nofollow' : 'follow'}`);
-
-    // Update Open Graph tags
-    const ogTags: Record<string, string> = {
+    const meta: Record<string, string> = {
       'og:title': title,
       'og:description': description,
-      'og:url': canonical || `${SITE_URL}${window.location.pathname}`,
-      'og:site_name': 'NightLight',
+      'og:url': url,
+      'og:site_name': APP_NAME,
       'og:type': ogType,
       'og:image': ogImage,
       'og:image:width': '1200',
       'og:image:height': '630',
-      'og:image:alt': 'NightLight — Android music player interface',
-    };
+      'og:image:alt': `${APP_NAME} — Android music player interface`,
+    }
+    for (const [property, content] of Object.entries(meta)) {
+      setMeta(`meta[property="${property}"]`, 'property', property, content)
+    }
 
-    Object.entries(ogTags).forEach(([property, content]) => {
-      let tag = document.querySelector(`meta[property="${property}"]`);
-      if (!tag) {
-        tag = document.createElement('meta');
-        tag.setAttribute('property', property);
-        document.head.appendChild(tag);
-      }
-      tag.setAttribute('content', content);
-    });
-
-    // Update Twitter tags
-    const twitterTags: Record<string, string> = {
+    const twitter: Record<string, string> = {
       'twitter:card': 'summary_large_image',
       'twitter:title': title,
       'twitter:description': description,
       'twitter:image': ogImage,
-      'twitter:image:alt': 'NightLight — Android music player interface',
-    };
-
-    Object.entries(twitterTags).forEach(([name, content]) => {
-      let tag = document.querySelector(`meta[name="${name}"]`);
-      if (!tag) {
-        tag = document.createElement('meta');
-        tag.setAttribute('name', name);
-        document.head.appendChild(tag);
-      }
-      tag.setAttribute('content', content);
-    });
-
-    // Update structured data
-    if (structuredData) {
-      // Remove existing NightLight structured data
-      const existingScripts = document.querySelectorAll('script[type="application/ld+json"][data-nightlight]');
-      existingScripts.forEach((s) => s.remove());
-
-      const dataArray = Array.isArray(structuredData) ? structuredData : [structuredData];
-      dataArray.forEach((data) => {
-        const script = document.createElement('script');
-        script.type = 'application/ld+json';
-        script.setAttribute('data-nightlight', 'true');
-        script.textContent = JSON.stringify(data);
-        document.head.appendChild(script);
-      });
+      'twitter:image:alt': `${APP_NAME} — Android music player interface`,
     }
-  }, [title, description, canonical, ogImage, ogType, structuredData, noIndex, noFollow]);
+    for (const [name, content] of Object.entries(twitter)) {
+      setMeta(`meta[name="${name}"]`, 'name', name, content)
+    }
+  }, [title, description, url, ogImage, ogType, noIndex])
 
   return (
     <>
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
       <Navigation />
-      <main id="main-content" style={{ position: 'relative', zIndex: 1 }}>
+      <main id="main-content">
         {children}
       </main>
       <Footer />
     </>
-  );
+  )
 }

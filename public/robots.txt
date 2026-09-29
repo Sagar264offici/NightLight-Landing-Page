@@ -1,4 +1,7 @@
+# NightLight — the marketing site is a static build; every page is prerendered.
+# The only page excluded from crawling is the 404 document.
 User-agent: *
 Allow: /
+Disallow: /404.html
 
 Sitemap: https://nightlightmusic.vercel.app/sitemap.xml

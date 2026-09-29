@@ -17,7 +17,13 @@ export const PRODUCT_DESCRIPTION =
 /* DOWNLOAD ARCHITECTURE — change ONE value, every CTA updates.        */
 /* ------------------------------------------------------------------ */
 
-/** The one destination every download CTA points at. */
+/**
+ * The one destination every download CTA points at.
+ *
+ * Until the APK is published, leave this as the placeholder below. Every CTA
+ * then renders an explicit "Download link coming soon." state instead of a
+ * link that 404s — swap in the real URL and the whole site updates at once.
+ */
 export const DOWNLOAD_URL = 'REPLACE_WITH_DOWNLOAD_LINK'
 
 /**
@@ -73,7 +79,7 @@ export interface Track {
   duration: number
   /** Procedural album art — layered CSS gradients, no fake screenshots. */
   gradient: string
-  /** Static local cover art path (from SongsTumb thumbnails), falls back to gradient. */
+  /** Static local cover art path under /covers, falls back to the gradient. */
   coverUrl?: string
 }
 
@@ -110,6 +116,7 @@ export const TRACKS: readonly Track[] = [
     artist: 'Safari',
     context: 'Chill Vibes',
     duration: 185,
+    coverUrl: '/covers/serena-safari.png',
     gradient:
       'radial-gradient(120% 100% at 40% 60%, #a29bfe 0%, rgba(162,155,254,0) 55%), linear-gradient(170deg, #1a2a3a 0%, #0d1520 100%)',
   },
@@ -136,6 +143,7 @@ export const TRACKS: readonly Track[] = [
     artist: 'Krishna',
     context: 'Good Vibes',
     duration: 210,
+    coverUrl: '/covers/hola-amigo-krishna.png',
     gradient:
       'radial-gradient(120% 80% at 30% 40%, #00b894 0%, rgba(0,184,148,0) 55%), radial-gradient(100% 100% at 70% 80%, #fdcb6e 0%, rgba(253,203,110,0) 50%), linear-gradient(180deg, #0a2a22 0%, #071215 100%)',
   },
@@ -195,29 +203,7 @@ export const TRACKS: readonly Track[] = [
   },
 ]
 
-/** Sample time-synced lyric lines for the Perfect demo. */
-export const PERFECT_LYRICS: readonly string[] = [
-  'I found a love for me',
-  'Darling, just dive right in',
-  'And follow my lead',
-  'Well, I found a girl, beautiful and sweet',
-  'Oh, I never knew you were the someone',
-  'Waiting for me',
-  'Cause we were just kids when we fell in love',
-  'Not knowing what it was',
-  'I will not give you up this time',
-  'But darling, just kiss me slow, your heart is all I own',
-  'And in your eyes you\'re holding mine',
-  'Baby, I\'m dancing in the dark',
-  'With you between my arms',
-  'Barefoot on the grass',
-  'Listening to our favourite song',
-  'When you said you looked a mess',
-  'I whispered underneath my breath',
-  'But you heard it, darling, you look perfect tonight',
-]
-
-/** Original sample lyrics (placeholder). */
+/** Original sample lyrics used by the player mock's lyric view. */
 export const SAMPLE_LYRICS: readonly string[] = [
   'streetlights on the ceiling again',
   'the city hums in a lower key',
@@ -225,73 +211,6 @@ export const SAMPLE_LYRICS: readonly string[] = [
   'and the chorus arrives like rain',
   'hold it — hold it — let it fade',
   'the night knows what to play',
-]
-
-/* ------------------------------------------------------------------ */
-/* FEATURE + SMART CONTENT (§22, §23, §64)                             */
-/* ------------------------------------------------------------------ */
-
-export const SMART_WORDS: readonly string[] = [
-  '2:00 am',
-  'rain outside',
-  'wind-down',
-  'late drive',
-  'focus',
-  'new releases',
-  'instrumental',
-  'your tuesday nights',
-  'low light',
-  'rediscovered',
-  'slow tempo',
-  'after hours',
-]
-
-/* ------------------------------------------------------------------ */
-/* SEARCH DEMO DATA (§12)                                              */
-/* ------------------------------------------------------------------ */
-
-export interface SearchResult {
-  title: string
-  artist: string
-  variant?: string
-  canonical: boolean
-}
-
-export const SEARCH_DEMO: readonly { query: string; results: readonly SearchResult[] }[] = [
-  {
-    query: 'Ed Sheeran Perfect',
-    results: [
-      { title: 'Perfect', artist: 'Ed Sheeran', canonical: true },
-      { title: 'Perfect Acoustic', artist: 'Ed Sheeran', variant: 'acoustic', canonical: false },
-      { title: 'Perfect Live', artist: 'Ed Sheeran', variant: 'live', canonical: false },
-      { title: 'Perfect Remix', artist: 'Ed Sheeran', variant: 'remix', canonical: false },
-    ],
-  },
-  {
-    query: 'Ed Sheeran Perfect acoustic',
-    results: [
-      { title: 'Perfect Acoustic', artist: 'Ed Sheeran', variant: 'acoustic', canonical: true },
-      { title: 'Perfect', artist: 'Ed Sheeran', canonical: false },
-      { title: 'Perfect Live', artist: 'Ed Sheeran', variant: 'live', canonical: false },
-      { title: 'Perfect Remix', artist: 'Ed Sheeran', variant: 'remix', canonical: false },
-    ],
-  },
-]
-
-/* ------------------------------------------------------------------ */
-/* LANGUAGE DEMO DATA (§21)                                            */
-/* ------------------------------------------------------------------ */
-
-export const LANG_EN: readonly { title: string; artist: string }[] = [
-  { title: 'Perfect', artist: 'Ed Sheeran' },
-  { title: 'Attention', artist: 'Charlie Puth' },
-  { title: 'Levitating', artist: 'Dua Lipa' },
-]
-
-export const LANG_HI: readonly { title: string; artist: string }[] = [
-  { title: 'Paaro', artist: 'Aditya Rikhari' },
-  { title: 'Pal Pal', artist: 'Talwinder' },
-  { title: 'Chal Bombay', artist: 'Divine' },
 ]
 
 /* ------------------------------------------------------------------ */
@@ -303,32 +222,13 @@ export const downloadConfigured =
   DOWNLOAD_URL.trim() !== '' && !DOWNLOAD_URL.startsWith('REPLACE_')
 
 /** Primary destination used by every CTA (falls back through confirmed platforms). */
-export const RESOLVED_DOWNLOAD_URL =
-  (downloadConfigured && DOWNLOAD_URL) ||
-  (PLAY_STORE_URL && PLAY_STORE_URL) ||
-  (DIRECT_APK_URL && DIRECT_APK_URL) ||
-  ''
+export const RESOLVED_DOWNLOAD_URL = downloadConfigured
+  ? DOWNLOAD_URL
+  : PLAY_STORE_URL || DIRECT_APK_URL || ''
 
 /* ------------------------------------------------------------------ */
 /* COVER ART                                                            */
-/* Local thumbnails (public/covers, from SongsTumb) are attached in     */
-/* TRACKS above. For any track without one, fetch artwork at runtime    */
-/* via the album-art loader (no key needed).                            */
-/* Call initCoverArt() once at app start to fill the gaps.              */
+/* Every track's artwork is a local file under public/covers, with      */
+/* WebP/AVIF derivatives generated by `npm run covers`. That keeps the   */
+/* site free of third-party image requests at runtime.                  */
 /* ------------------------------------------------------------------ */
-
-/** Mutable track list so cover URLs can be injected at runtime. */
-export const TRACKS_MUTABLE: Track[] = [...TRACKS]
-
-export async function initCoverArt(): Promise<void> {
-  const missing = TRACKS_MUTABLE.filter((t) => !t.coverUrl)
-  if (missing.length === 0) return
-  const { preloadCovers } = await import('../engine/coverArt')
-  const covers = await preloadCovers(
-    missing.map((t) => ({ title: t.title, artist: t.artist })),
-  )
-  for (const t of missing) {
-    const key = `${t.title.toLowerCase().trim()}|${t.artist.toLowerCase().trim()}`
-    if (covers.has(key)) t.coverUrl = covers.get(key)
-  }
-}

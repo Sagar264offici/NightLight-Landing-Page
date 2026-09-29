@@ -35,18 +35,18 @@ export default function FeaturesPage() {
       />
 
       <section className="page-hero" aria-labelledby="features-title">
-        <div className="page-hero__inner" style={{ maxWidth: '800px', margin: '0 auto', padding: 'clamp(120px, 18vh, 200px) clamp(20px, 5vw, 72px) clamp(80px, 12vh, 120px)', textAlign: 'center' }}>
+        <div className="page-hero__inner page-hero__inner--wide">
           <Reveal>
             <Eyebrow>Android Music Player Features</Eyebrow>
             <Headline as="h1" id="features-title" size="xl">Every feature. For a reason.</Headline>
-            <Body className="page-hero__lead" style={{ marginTop: '24px', fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)', maxWidth: 'none' }}>
+            <Body className="page-hero__lead">
               No feature checkboxes. No bloat. Each capability exists because it improves the listening experience.
             </Body>
           </Reveal>
         </div>
       </section>
 
-      <main className="page-content" style={{ maxWidth: '900px', margin: '0 auto', padding: '0 clamp(20px, 5vw, 72px) clamp(120px, 16vh, 180px)' }}>
+      <div className="page-content page-content--wide">
         {FEATURES.map((feature, index) => (
           <article key={feature.id} className="feature-detail" style={{ marginTop: index === 0 ? 0 : 'clamp(64px, 10vh, 100px)', paddingBottom: 'clamp(48px, 8vh, 80px)', borderBottom: index < FEATURES.length - 1 ? '1px solid rgba(216, 181, 106, 0.1)' : 'none' }}>
             <Reveal delay={index * 50}>
@@ -86,7 +86,7 @@ export default function FeaturesPage() {
             <p className="micro" style={{ marginTop: '16px' }}>NightLight runs on Android 8.0 and above.</p>
           </div>
         </Reveal>
-      </main>
+      </div>
     </>
   );
 }

@@ -50,18 +50,18 @@ export default function HowItWorksPage() {
       />
 
       <section className="page-hero" aria-labelledby="how-title">
-        <div className="page-hero__inner" style={{ maxWidth: '800px', margin: '0 auto', padding: 'clamp(120px, 18vh, 200px) clamp(20px, 5vw, 72px) clamp(80px, 12vh, 120px)', textAlign: 'center' }}>
+        <div className="page-hero__inner">
           <Reveal>
             <Eyebrow>How It Works</Eyebrow>
             <Headline as="h1" id="how-title" size="xl">From install to a perfect queue in minutes.</Headline>
-            <Body className="page-hero__lead" style={{ marginTop: '24px', fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)', maxWidth: 'none' }}>
+            <Body className="page-hero__lead">
               NightLight is designed to be immediately understandable. Here's the complete flow inside the Android app.
             </Body>
           </Reveal>
         </div>
       </section>
 
-      <main className="page-content" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 clamp(20px, 5vw, 72px) clamp(120px, 16vh, 180px)' }}>
+      <div className="page-content">
         {STEPS.map((step, index) => (
           <article key={step.id} className="how-step" id={`step-${index + 1}`} style={{
             marginTop: index === 0 ? 0 : 'clamp(80px, 12vh, 140px)',
@@ -153,7 +153,7 @@ export default function HowItWorksPage() {
             <p className="micro" style={{ marginTop: '16px' }}>Requires Android 8.0 or newer.</p>
           </div>
         </Reveal>
-      </main>
+      </div>
     </>
   );
 }

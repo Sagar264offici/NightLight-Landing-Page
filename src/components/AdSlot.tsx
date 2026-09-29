@@ -17,6 +17,7 @@
  */
 
 import { useEffect, useRef, useState, useCallback } from 'react';
+import { useLocation } from 'react-router-dom';
 import { canShowAds } from '../config/routes';
 
 interface AdSlotProps {
@@ -104,7 +105,9 @@ export default function AdSlot({
   format = 'auto',
   lazy = false,
 }: AdSlotProps) {
-  const [eligible, setEligible] = useState(false);
+  // Router location, not window.location — keeps this correct on the server
+  // render and on a client-side navigation.
+  const { pathname } = useLocation();
   const [scriptReady, setScriptReady] = useState(false);
   const [adRequested, setAdRequested] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -120,20 +123,20 @@ export default function AdSlot({
     }
   }, []);
 
-  // Check route eligibility on mount
-  useEffect(() => {
-    if (!isPolicyValid) return;
-    const pathname = window.location.pathname;
-    const allowed = canShowAds(pathname);
-    setEligible(allowed);
+  // Load AdSense once this slot is on an ad-eligible route. Eligibility itself
+  // is read during render (cheap string compare) rather than stored in state.
+  const eligible = isPolicyValid && canShowAds(pathname);
 
-    if (allowed) {
-      // Load AdSense script when eligible
-      loadAdSenseScript().then((success) => {
-        setScriptReady(success);
-      });
-    }
-  }, [isPolicyValid]);
+  useEffect(() => {
+    if (!eligible) return;
+    let active = true;
+    loadAdSenseScript().then((success) => {
+      if (active) setScriptReady(success);
+    });
+    return () => {
+      active = false;
+    };
+  }, [eligible]);
 
   // Handle lazy loading via IntersectionObserver
   useEffect(() => {

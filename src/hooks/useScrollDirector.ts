@@ -4,7 +4,7 @@
  * and drives: nav treatment, weather reactivity, section progress variables.
  * No scroll-jacking, no fake scrollbars. One rAF, no per-component listeners.
  */
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { clamp, lerp } from '../lib/math'
 import { weather } from '../engine/weather'
 
@@ -106,21 +106,26 @@ export function installScrollDirector(): () => void {
 }
 
 /** Smoothed hero-exit value for consumers that want eased motion. */
+/**
+ * Smoothed follower of a mutable `{ value }` box.
+ * The smoothed number is state, not a ref read during render: refs are not
+ * reactive, so returning one would freeze the component at its first value.
+ */
 export function useSmoothed(value: { value: number }, amt = 0.1): number {
-  const out = useRef(0)
-  const [, force] = useState(0)
+  const [out, setOut] = useState(0)
   useEffect(() => {
     let raf = 0
+    let current = 0
     const tick = () => {
-      const next = lerp(out.current, value.value, amt)
-      if (Math.abs(next - out.current) > 0.0005) {
-        out.current = next
-        force((n) => (n + 1) % 1000000)
+      const next = lerp(current, value.value, amt)
+      if (Math.abs(next - current) > 0.0005) {
+        current = next
+        setOut(next)
       }
       raf = requestAnimationFrame(tick)
     }
     raf = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(raf)
   }, [value, amt])
-  return out.current
+  return out
 }

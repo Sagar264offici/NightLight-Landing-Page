@@ -35,18 +35,18 @@ export default function AboutPage() {
       />
 
       <section className="page-hero" aria-labelledby="about-title">
-        <div className="page-hero__inner" style={{ maxWidth: '800px', margin: '0 auto', padding: 'clamp(120px, 18vh, 200px) clamp(20px, 5vw, 72px) clamp(80px, 12vh, 120px)', textAlign: 'center' }}>
+        <div className="page-hero__inner">
           <Reveal>
             <Eyebrow>About NightLight</Eyebrow>
             <Headline as="h1" id="about-title" size="xl">What NightLight is. And why.</Headline>
-            <Body className="page-hero__lead" style={{ marginTop: '24px', fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)', maxWidth: 'none' }}>
+            <Body className="page-hero__lead">
               NightLight is an Android music player built around how you actually listen — context, mood, and discovery, without losing the music.
             </Body>
           </Reveal>
         </div>
       </section>
 
-      <main className="page-content" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 clamp(20px, 5vw, 72px) clamp(120px, 16vh, 180px)' }}>
+      <div className="page-content">
         {/* WHAT IS NIGHTLIGHT */}
         <article className="about-section" aria-labelledby="what-is-title">
           <Reveal>
@@ -167,7 +167,7 @@ export default function AboutPage() {
             <p className="micro" style={{ marginTop: '16px' }}>Requires Android 8.0 or newer.</p>
           </div>
         </Reveal>
-      </main>
+      </div>
     </>
   );
 }

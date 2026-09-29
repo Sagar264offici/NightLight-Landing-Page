@@ -28,10 +28,14 @@ export default function Navigation() {
     const first = panelRef.current?.querySelector<HTMLElement>('a, button')
     first?.focus()
 
+    // Read before the effect body so cleanup always restores focus to the
+    // button that opened the menu, even if the ref has since been reassigned.
+    const trigger = triggerRef.current
+
     return () => {
       document.body.style.overflow = prev
       window.removeEventListener('keydown', onKey)
-      triggerRef.current?.focus()
+      trigger?.focus()
     }
   }, [open])
 
