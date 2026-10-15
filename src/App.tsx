@@ -15,6 +15,9 @@ import Homepage from './pages/Homepage'
 import AboutPage from './pages/AboutPage'
 import FeaturesPage from './pages/FeaturesPage'
 import HowItWorksPage from './pages/HowItWorksPage'
+import DownloadPage from './pages/DownloadPage'
+import FaqPage from './pages/FaqPage'
+import HelpPage from './pages/HelpPage'
 import ContactPage from './pages/ContactPage'
 import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
@@ -28,6 +31,9 @@ const PAGE_COMPONENTS: Record<string, ComponentType> = {
   '/about': AboutPage,
   '/features': FeaturesPage,
   '/how-it-works': HowItWorksPage,
+  '/download': DownloadPage,
+  '/faq': FaqPage,
+  '/help': HelpPage,
   '/contact': ContactPage,
   '/privacy': PrivacyPage,
   '/terms': TermsPage,

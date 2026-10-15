@@ -20,18 +20,22 @@ export const PRODUCT_DESCRIPTION =
 /**
  * The one destination every download CTA points at.
  *
- * Until the APK is published, leave this as the placeholder below. Every CTA
- * then renders an explicit "Download link coming soon." state instead of a
- * link that 404s — swap in the real URL and the whole site updates at once.
+ * Points at the release APK served straight from this site, so the button is
+ * always a real download — never a 404 and never a "coming soon" state.
  */
-export const DOWNLOAD_URL = 'REPLACE_WITH_DOWNLOAD_LINK'
+export const DOWNLOAD_URL = '/downloads/nightlight.apk'
 
 /**
- * Future platform destinations. Do NOT display platforms that are not
- * confirmed yet — leave empty and they stay hidden from the UI.
+ * Future platform destinations. Only rendered when confirmed — never faked.
  */
 export const PLAY_STORE_URL = ''
-export const DIRECT_APK_URL = ''
+export const DIRECT_APK_URL = '/downloads/nightlight.apk'
+
+/** Release metadata shown next to every download CTA. */
+export const APK_VERSION = '1.0.0'
+export const APK_FILE_NAME = 'nightlight.apk'
+export const APK_FILE_SIZE = '10.1 MB'
+export const APK_MIN_ANDROID = 'Android 8.0+'
 
 /* ------------------------------------------------------------------ */
 /* SITE / SOCIAL                                                       */
@@ -59,6 +63,7 @@ export const SOCIAL_LINKS: ReadonlyArray<{ label: string; href: string }> = [
 export const NAV_LINKS = [
   { label: 'Features', href: '/features' },
   { label: 'How It Works', href: '/how-it-works' },
+  { label: 'Download', href: '/download' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Help', href: '/help' },
   { label: 'About', href: '/about' },

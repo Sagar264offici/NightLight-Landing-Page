@@ -28,6 +28,7 @@ const PAGES = [
   '/about',
   '/features',
   '/how-it-works',
+  '/download',
   '/faq',
   '/help',
   '/contact',

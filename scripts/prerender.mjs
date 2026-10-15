@@ -81,7 +81,7 @@ await writeFile(path.join(DIST, '404.html'), documentFor(NOT_FOUND_PATH))
 
 /* -- sitemap, generated from the same route table the router uses -- */
 const today = new Date().toISOString().slice(0, 10)
-const priority = { '/': '1.0', '/features': '0.9', '/how-it-works': '0.8', '/faq': '0.8' }
+const priority = { '/': '1.0', '/download': '0.9', '/features': '0.9', '/how-it-works': '0.8', '/faq': '0.8', '/help': '0.7' }
 const xml = [
   '<?xml version="1.0" encoding="UTF-8"?>',
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',

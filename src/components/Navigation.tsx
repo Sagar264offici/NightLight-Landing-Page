@@ -42,7 +42,7 @@ export default function Navigation() {
   return (
     <header className={`nav ${scrolled ? 'is-scrolled' : ''} ${open ? 'is-open' : ''}`}>
       <div className="nav__inner">
-        <a className="nav__brand" href="#top" aria-label={`${APP_NAME} — back to top`}>
+        <a className="nav__brand" href="/" aria-label={`${APP_NAME} — home`}>
           <svg className="nav__mark" viewBox="0 0 24 24" aria-hidden="true">
             <mask id="nl-moon-mask">
               <rect width="24" height="24" fill="#fff" />

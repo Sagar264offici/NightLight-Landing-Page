@@ -52,6 +52,27 @@ export const CONTENT_ROUTES: readonly RouteConfig[] = [
     showInNav: true,
   },
   {
+    path: '/download',
+    title: 'Download NightLight APK for Android (Free, Latest Version)',
+    description: 'Download the free NightLight APK for Android 8.0 and above. Direct, safe install with mood-aware shuffle, contextual discovery, trending tracks, lyrics, and background playback.',
+    showInFooter: true,
+    showInNav: true,
+  },
+  {
+    path: '/faq',
+    title: 'FAQ | NightLight — Android Music Player',
+    description: 'Frequently asked questions about the NightLight Android music player: free download, background playback, lyrics, playlists, supported Android versions, and privacy.',
+    showInFooter: true,
+    showInNav: true,
+  },
+  {
+    path: '/help',
+    title: 'Help & Troubleshooting | NightLight — Android Music Player',
+    description: 'NightLight help guides and troubleshooting: install the APK, fix playback issues, manage playlists and favorites, use lyrics, and solve background playback problems.',
+    showInFooter: true,
+    showInNav: true,
+  },
+  {
     path: '/contact',
     title: 'Contact | NightLight',
     description: 'Contact NightLight for bug reports, content issues, copyright concerns, or questions about the privacy policy and terms of service.',

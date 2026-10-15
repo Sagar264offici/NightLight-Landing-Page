@@ -40,6 +40,23 @@ interface AdSlotProps {
 const ADSENSE_CLIENT = 'ca-pub-9891925898932381';
 const ADSENSE_SCRIPT_URL = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`;
 
+/**
+ * Real ad-unit IDs, one per placement. Empty string = "not configured yet".
+ * An unconfigured slot renders NOTHING and does not load the AdSense script —
+ * that keeps Core Web Vitals clean and avoids adsbygoogle console errors on
+ * pages without a sold unit. Fill these in from the AdSense dashboard.
+ */
+const AD_UNIT_IDS: Record<string, string> = {
+  'homepage-after-intro': '',
+  'homepage-after-features': '',
+  'features-after-list': '',
+  'how-it-works-after-steps': '',
+  'about-after-intro': '',
+  'faq-after-list': '',
+  'help-after-guides': '',
+  'download-after-steps': '',
+};
+
 let scriptLoaded = false;
 let scriptLoading = false;
 const scriptLoadPromises: Array<(success: boolean) => void> = [];
@@ -117,6 +134,11 @@ export default function AdSlot({
   // Policy check - fail closed (runs on every render, not conditional)
   const isPolicyValid = policy === 'publisher-content';
 
+  // Resolve the real ad-unit id: explicit `slot` prop wins, otherwise the
+  // per-placement map above. No id → render nothing, load nothing.
+  const resolvedSlot = slot || AD_UNIT_IDS[slotName] || '';
+  const configured = resolvedSlot.trim() !== '';
+
   const requestAdIfReady = useCallback(() => {
     if (insRef.current && requestAd(insRef.current)) {
       setAdRequested(true);
@@ -125,7 +147,8 @@ export default function AdSlot({
 
   // Load AdSense once this slot is on an ad-eligible route. Eligibility itself
   // is read during render (cheap string compare) rather than stored in state.
-  const eligible = isPolicyValid && canShowAds(pathname);
+  // Unconfigured slots never trigger a download of the ad script.
+  const eligible = isPolicyValid && configured && canShowAds(pathname);
 
   useEffect(() => {
     if (!eligible) return;
@@ -168,7 +191,8 @@ export default function AdSlot({
     requestAdIfReady();
   }, [isPolicyValid, eligible, scriptReady, lazy, adRequested, requestAdIfReady]);
 
-  // Fail closed - no ad, no placeholder, no empty div
+  // Fail closed - no ad, no placeholder, no empty div. Reserving layout
+  // space for an ad that can never fill would only hurt CLS for no revenue.
   if (!isPolicyValid || !eligible) {
     return null;
   }
@@ -186,7 +210,7 @@ export default function AdSlot({
         className="adsbygoogle"
         style={{ display: 'block', minHeight: format === 'fluid' ? '0' : '250px' }}
         data-ad-client={client}
-        data-ad-slot={slot || ''}
+        data-ad-slot={resolvedSlot}
         data-ad-format={format}
         data-full-width-responsive="true"
         aria-hidden="true"
@@ -198,10 +222,12 @@ export default function AdSlot({
 /**
  * Convenience component for inline content ads.
  * Use within article/content flow where appropriate.
+ * Lazy by default: inline slots sit below the fold, so the ad request waits
+ * until the reader scrolls near — better LCP/INP, zero layout shift.
  */
 export function InlineAdSlot(props: Omit<AdSlotProps, 'policy'> & { slotName?: string }) {
-  const { slotName = 'inline', ...rest } = props;
-  return <AdSlot policy="publisher-content" slotName={slotName} {...rest} />;
+  const { slotName = 'inline', lazy = true, ...rest } = props;
+  return <AdSlot policy="publisher-content" slotName={slotName} lazy={lazy} {...rest} />;
 }
 
 /**

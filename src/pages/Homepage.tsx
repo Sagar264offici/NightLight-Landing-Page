@@ -83,7 +83,7 @@ export default function Homepage() {
               <DownloadButton>Download for Android</DownloadButton>
               <SecondaryButton href="#what-is-nightlight">Explore the experience</SecondaryButton>
             </div>
-            <Micro className="hero__micro">Free · Android 8.0+ · Open source on GitHub</Micro>
+            <Micro className="hero__micro">Free · Android 8.0+ · Direct APK · <a href="/download" style={{ textDecoration: 'underline' }}>Install guide</a></Micro>
           </div>
 
           <div className="hero__device">
@@ -462,10 +462,11 @@ export default function Homepage() {
             <br />
             Your music.
           </Headline>
-          <Body className="finale__line">Put your headphones on.</Body>
+          <Body className="finale__line">Put your headphones on. Free APK, no sign-up.</Body>
           <div className="finale__cta">
             <DownloadButton>Download NightLight for Android</DownloadButton>
           </div>
+          <Micro><a href="/download" style={{ textDecoration: 'underline' }}>Install guide &amp; release info →</a></Micro>
         </div>
       </section>
     </>

@@ -7,9 +7,10 @@
  * so this component only has to keep the head in sync *after* a client-side
  * navigation, when no new document is fetched.
  */
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Navigation from './Navigation'
 import Footer from './Footer'
+import { StickyDownloadCta } from '../ui/DownloadButton'
 import { APP_NAME, SITE_URL } from '../config/site'
 
 interface PageLayoutProps {
@@ -42,6 +43,25 @@ export default function PageLayout({
   noIndex = false,
 }: PageLayoutProps) {
   const url = canonical ?? `${SITE_URL}/`
+
+  // Sticky mobile CTA: hidden at the top (the hero CTA is visible there),
+  // revealed once the reader has scrolled past it.
+  const [pastHero, setPastHero] = useState(false)
+  useEffect(() => {
+    let raf = 0
+    const onScroll = () => {
+      cancelAnimationFrame(raf)
+      raf = requestAnimationFrame(() => {
+        setPastHero(window.scrollY > Math.min(window.innerHeight * 0.85, 760))
+      })
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      cancelAnimationFrame(raf)
+      window.removeEventListener('scroll', onScroll)
+    }
+  }, [])
 
   useEffect(() => {
     document.title = title
@@ -100,6 +120,7 @@ export default function PageLayout({
         {children}
       </main>
       <Footer />
+      {pastHero && <StickyDownloadCta />}
     </>
   )
 }
