@@ -32,9 +32,9 @@ export const PLAY_STORE_URL = ''
 export const DIRECT_APK_URL = '/downloads/nightlight.apk'
 
 /** Release metadata shown next to every download CTA. */
-export const APK_VERSION = '1.0.0'
+export const APK_VERSION = '1.1'
 export const APK_FILE_NAME = 'nightlight.apk'
-export const APK_FILE_SIZE = '10.1 MB'
+export const APK_FILE_SIZE = '10.4 MB'
 export const APK_MIN_ANDROID = 'Android 8.0+'
 
 /* ------------------------------------------------------------------ */
